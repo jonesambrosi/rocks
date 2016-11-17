@@ -23,6 +23,7 @@ logger.setLevel(logging.DEBUG)
 def plugin_loaded() -> None:
     """Called directly from sublime on plugin load
     """
+    global settings
     settings = sublime.load_settings('Rocks.sublime-settings')
     # ViewCollection.compare_against = settings.get('compare_against', 'HEAD')
 
@@ -49,6 +50,16 @@ def change_position_view(view):
 class RocksWindowCommand(sublime_plugin.WindowCommand):
     region_names = ['tracked', 'unverified',
                     'untracked', 'success', 'errro']
+
+    def run(self, force_refresh=False):
+        print('<<< RocksWindowCommand')
+
+        # self.view = self.window.active_view()
+        print(self.view)
+        if not self.view:
+            # View is not ready yet, try again later.
+            sublime.set_timeout(self.run, 1)
+            return
 
     def clear_all(self):
         for region_name in self.region_names:
@@ -95,12 +106,59 @@ class RocksWindowCommand(sublime_plugin.WindowCommand):
 class RocksCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        self.view.get_settings(self.view, 'rocks_on')
-        self.view.insert(edit, 0, "Hello, World!")
+        # self.view.get_settings(self.view, 'rocks_on')
+        # self.view.insert(edit, 0, "Hello, World!")
+        print('<<< RocksCommand')
+        print(self.view)
+        # self.view = self.active_view()
+        if not self.view:
+            # View is not ready yet, try again later.
+            sublime.set_timeout(self.run, 1)
+            return
 
         modified = RocksChecker.all_lines(self.view)
         self.bind_icons('untracked', modified)
 
+    def clear_all(self):
+        for region_name in self.region_names:
+            self.view.erase_regions('rocks_%s' % region_name)
+
+    def lines_to_regions(self, lines):
+        regions = []
+        for line in lines:
+            position = self.view.text_point(line - 1, 0)
+            region = sublime.Region(position, position + 1)
+            # if not self.is_region_protected(region):
+            #     regions.append(region)
+            regions.append(region)
+        return regions
+
+    def plugin_dir(self):
+        path = os.path.realpath(__file__)
+        root = os.path.split(os.path.dirname(path))[1]
+        return os.path.splitext(root)[0]
+
+    def icon_path(self, icon_name):
+        if int(sublime.version()) < 3014:
+            path = '../Rocks'
+            extn = ''
+        else:
+            path = 'Packages/' + self.plugin_dir()
+            extn = '.png'
+
+        return "/".join([path, 'icons', icon_name + extn])
+
+    def bind_icons(self, event, lines):
+        regions = self.lines_to_regions(lines)
+        event_scope = event
+
+        scope = 'markup.%s.rocks' % event_scope
+        icon = self.icon_path(event)
+        if ST3 and self.show_in_minimap:
+            flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
+        else:
+            flags = sublime.HIDDEN
+        self.view.add_regions('rocks_%s' % event, regions, scope, icon, flags)
 
 class BackgroundChecker(sublime_plugin.EventListener):
     """Background linter, can be turned off via plugin settings
@@ -108,7 +166,7 @@ class BackgroundChecker(sublime_plugin.EventListener):
 
     def on_modified(self, view: sublime.View) -> None:
         # print(view.settings().get('syntax'))
-        print('modified')
+        print('.', end='')
         if 'py' in view.settings().get('syntax'):
             print('python')
             # self.run_linter(view)

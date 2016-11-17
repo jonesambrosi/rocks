@@ -1,0 +1,10 @@
+/*
+    Rocks default settings
+*/
+{
+    /*
+        Enable Rocks 
+    */
+    "rocks_on": true
+    
+}
