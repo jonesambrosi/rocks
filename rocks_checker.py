@@ -1,4 +1,15 @@
 import sublime
+import trace
+import StringIO
+
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.setLevel(logging.DEBUG)
+
+tracker_out_last = StringIO() 
+tracker_out = StringIO()
+rocks_tracker = trace.Trace(count=1, trace=1, countfuncs=0, countcallers=0, ignoremods=(
+), ignoredirs=(), infile=None, outfile=tracker_out, timing=True)
 
 
 class RocksChecker:
@@ -36,7 +47,11 @@ class RocksChecker:
 
     @staticmethod
     def all_lines(view):
+                        
         chars = view.size()
         region = sublime.Region(0, chars)
         lines = view.lines(region)
-        return lines
+        rocks_tracker.run("".join(lines))
+        r = rocks_tracker.results()
+        logger.debug(r)
+        return range(0, len(lines))
