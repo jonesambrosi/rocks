@@ -1,12 +1,18 @@
 import sublime
 import trace
-import StringIO
+import logging
+import sys
+try:
+    from StringIO import StringIO as StringIO
+except (ImportError, ValueError):
+    from io import StringIO as StringIO
+
 
 logger = logging.getLogger(__name__)
-logger.addHandler(logging.StreamHandler(sys.stdout))
+# logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
 
-tracker_out_last = StringIO() 
+tracker_out_last = StringIO()
 tracker_out = StringIO()
 rocks_tracker = trace.Trace(count=1, trace=1, countfuncs=0, countcallers=0, ignoremods=(
 ), ignoredirs=(), infile=None, outfile=tracker_out, timing=True)
@@ -47,11 +53,16 @@ class RocksChecker:
 
     @staticmethod
     def all_lines(view):
-                        
+        logger.debug("all_lines")
         chars = view.size()
         region = sublime.Region(0, chars)
         lines = view.lines(region)
-        rocks_tracker.run("".join(lines))
+
+        logger.debug("%s", view.substr(region))
+        rocks_tracker.run(view.substr(region))
+
+        # trace.CoverageResults.
         r = rocks_tracker.results()
+
         logger.debug(r)
         return range(0, len(lines))

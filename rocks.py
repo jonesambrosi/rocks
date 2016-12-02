@@ -25,7 +25,6 @@ def plugin_loaded() -> None:
     """
     global settings
     settings = sublime.load_settings('Rocks.sublime-settings')
-    # ViewCollection.compare_against = settings.get('compare_against', 'HEAD')
 
     if not LOOP_RUNNING:
         print("unloop")
@@ -100,19 +99,16 @@ class RocksWindowCommand(sublime_plugin.WindowCommand):
         event_scope = event
         scope = 'markup.%s.rocks' % event_scope
         icon = self.icon_path(event)
-        # if ST3 and self.show_in_minimap:
-        #     flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
-        # else:
-        #     flags = sublime.HIDDEN
-        flags = sublime.HIDDEN
+        if ST3 and self.show_in_minimap:
+            flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
+        else:
+            flags = sublime.HIDDEN
         self.view.add_regions('rocks_%s' % event, regions, scope, icon, flags)
 
 
 class RocksCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        # self.view.get_settings(self.view, 'rocks_on')
-        # self.view.insert(edit, 0, "Hello, World!")
         logger.debug('<<< RocksCommand')
         logger.debug(self.view)
         # self.view = self.active_view()
@@ -121,10 +117,12 @@ class RocksCommand(sublime_plugin.TextCommand):
             sublime.set_timeout(self.run, 1)
             return
 
+        # self.view.get_settings(self.view, 'rocks_on')
+        self.show_in_minimap = settings.get('show_in_minimap', True)
+
         modified = RocksChecker.all_lines(self.view)
         logger.debug("modified %s", modified)
         self.bind_icons('untracked', modified)
-        self.show_in_minimap = settings.get('show_in_minimap', True)
 
     def clear_all(self):
         for region_name in self.region_names:
@@ -163,11 +161,10 @@ class RocksCommand(sublime_plugin.TextCommand):
         event_scope = event
         scope = 'markup.%s.rocks' % event_scope
         icon = self.icon_path(event)
-        # if ST3 and self.show_in_minimap:
-        #     flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
-        # else:
-        #     flags = sublime.HIDDEN
-        flags = sublime.HIDDEN
+        if ST3 and self.show_in_minimap:
+            flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
+        else:
+            flags = sublime.HIDDEN
         self.view.add_regions('rocks_%s' % event, regions, scope, icon, flags)
 
 
