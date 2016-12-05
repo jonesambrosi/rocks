@@ -1,0 +1,1575 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"asserttr",
+				"assertTrue\tfunction"
+			],
+			[
+				"surve",
+				"survey"
+			],
+			[
+				"formation",
+				"formation_name"
+			],
+			[
+				"po",
+				"point"
+			],
+			[
+				"km",
+				"km_lat"
+			],
+			[
+				"ra",
+				"radius_search"
+			],
+			[
+				"hy",
+				"hyp"
+			],
+			[
+				"kms",
+				"kms_to_survey"
+			],
+			[
+				"lease",
+				"leased_areas"
+			],
+			[
+				"comp",
+				"company_lease"
+			],
+			[
+				"sur",
+				"surface_installations"
+			],
+			[
+				"0x",
+				"0xF4A460"
+			],
+			[
+				"leaseholder_",
+				"leaseholder_grey"
+			],
+			[
+				"k",
+				"kilometers"
+			],
+			[
+				"get_blo",
+				"get_block_survey_enc"
+			],
+			[
+				"leaseholder_l",
+				"leaseholder_light"
+			],
+			[
+				"ye",
+				"yield"
+			],
+			[
+				"leas",
+				"leaseholder_grey"
+			],
+			[
+				"lea",
+				"leaseholder_grey"
+			],
+			[
+				"get_nea",
+				"get_nearby_blocks"
+			],
+			[
+				"surv",
+				"survey\tmodule"
+			],
+			[
+				"km_",
+				"km_lat"
+			],
+			[
+				"apr",
+				"aperture\tstatement"
+			],
+			[
+				"num",
+				"number_sections\tstatement"
+			],
+			[
+				"in",
+				"IntegerField"
+			],
+			[
+				"TIME",
+				"timezone"
+			],
+			[
+				"get_geological_",
+				"get_geological_parameter"
+			],
+			[
+				"config",
+				"Config\tclass"
+			],
+			[
+				"tmp",
+				"TmpGeo\tclass"
+			],
+			[
+				"forma",
+				"formations\tstatement"
+			],
+			[
+				"form",
+				"formation_depth"
+			],
+			[
+				"strea",
+				"streamer_spacing"
+			],
+			[
+				"stra",
+				"streamers"
+			],
+			[
+				"stre",
+				"Streamer"
+			],
+			[
+				"de",
+				"depths\tstatement"
+			],
+			[
+				"sear",
+				"search_depth_from_point"
+			],
+			[
+				"o",
+				"ouput"
+			],
+			[
+				"style",
+				"style_table"
+			],
+			[
+				"loca",
+				"location_name"
+			],
+			[
+				"geolo",
+				"get_geological_objective"
+			],
+			[
+				"com",
+				"company_name"
+			],
+			[
+				"get_bl",
+				"get_geological_objective"
+			],
+			[
+				"page",
+				"pagesize"
+			],
+			[
+				"date",
+				"datetime\tclass"
+			],
+			[
+				"Vese",
+				"Vessel"
+			],
+			[
+				"ge",
+				"geological_parameter\tstatement"
+			],
+			[
+				"send",
+				"send_welcome_reset_password"
+			],
+			[
+				"con",
+				"Config"
+			],
+			[
+				"char",
+				"CharField"
+			],
+			[
+				"if",
+				"if\tif"
+			],
+			[
+				"Tre",
+				"True"
+			],
+			[
+				"la",
+				"latLng"
+			],
+			[
+				"bloc",
+				"Block"
+			],
+			[
+				"dat",
+				"daterange_filter"
+			],
+			[
+				"loo",
+				"lookup_upto\tstatement"
+			],
+			[
+				"lookup_kwarg_upto",
+				"lookup_kwarg_upto_0\tstatement"
+			],
+			[
+				"low",
+				"Low"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"customer",
+				"customer_or_user"
+			],
+			[
+				"is_s",
+				"is_superuser"
+			],
+			[
+				"true",
+				"True\tkeyword"
+			],
+			[
+				"sty",
+				"style_table"
+			],
+			[
+				"W",
+				"WARNING\tstatement"
+			],
+			[
+				"survey",
+				"survey_id"
+			],
+			[
+				"point",
+				"points"
+			],
+			[
+				"data",
+				"data_survey\tparam"
+			],
+			[
+				"make_su",
+				"make_survey_execution\tfunction"
+			],
+			[
+				"make_",
+				"make_survey_design\tfunction"
+			],
+			[
+				"make",
+				"make_acquisition\tfunction"
+			],
+			[
+				"aqc",
+				"acquisition_window"
+			],
+			[
+				"bl",
+				"blank"
+			],
+			[
+				"vesse",
+				"vessel"
+			],
+			[
+				"equipamen",
+				"survey_equipament"
+			],
+			[
+				"su",
+				"survey_equipament"
+			],
+			[
+				"war",
+				"warning\tfunction"
+			],
+			[
+				"lon",
+				"lon_min\tstatement"
+			],
+			[
+				"mode",
+				"Model"
+			],
+			[
+				"vessel",
+				"vessel_path"
+			],
+			[
+				"p",
+				"pi"
+			],
+			[
+				"Block",
+				"BlockSurvey"
+			],
+			[
+				"get",
+				"get_obstruction_density"
+			],
+			[
+				"fromation",
+				"formation_depth"
+			],
+			[
+				"format",
+				"formation\tstatement"
+			],
+			[
+				"Blo",
+				"Block\tclass"
+			],
+			[
+				"lng_",
+				"lng_calc\tstatement"
+			],
+			[
+				"get_",
+				"get_path_survey\tfunction"
+			],
+			[
+				"lat_m",
+				"lat_min\tstatement"
+			],
+			[
+				"ang",
+				"angle\tstatement"
+			],
+			[
+				"angle",
+				"start_angle"
+			],
+			[
+				"lon_m",
+				"lon_min"
+			],
+			[
+				"ch",
+				"CharField"
+			],
+			[
+				"z",
+				"zIndex"
+			],
+			[
+				"Bloc",
+				"BlocksGeo\tclass"
+			],
+			[
+				"nome",
+				"nome_bacia\tstatement"
+			],
+			[
+				"Ge",
+				"GeologicalParameter\tclass"
+			],
+			[
+				"las",
+				"last_login"
+			],
+			[
+				"log",
+				"logger"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"Use",
+				"UserAdmin\tclass"
+			],
+			[
+				"blan",
+				"BLANK_CHOICE_DASH"
+			],
+			[
+				"templa",
+				"Template\timport"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"col-md-",
+				"col-md-12"
+			],
+			[
+				"ac",
+				"action"
+			],
+			[
+				"cons",
+				"contains"
+			],
+			[
+				"dra",
+				"drawingControlOptions"
+			],
+			[
+				"low_",
+				"low_quality\tparam"
+			],
+			[
+				"col",
+				"col-xs-12"
+			],
+			[
+				"send_",
+				"send_pdf_email\tfunction"
+			],
+			[
+				"re",
+				"request\tparam"
+			],
+			[
+				"to",
+				"to_email"
+			],
+			[
+				"atta",
+				"attach_mime\tparam"
+			],
+			[
+				"ema",
+				"email_message\tstatement"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"lo",
+				"logger\tstatement"
+			],
+			[
+				"hi",
+				"high_quality"
+			],
+			[
+				"map",
+				"map_report_export"
+			],
+			[
+				"bs3-b",
+				"bs3-button\tbs3-button"
+			],
+			[
+				"TA",
+				"TA_CENTER"
+			],
+			[
+				"of",
+				"offset"
+			],
+			[
+				"lin",
+				"line_bottom_color\tstatement"
+			],
+			[
+				"line",
+				"line_bottom_color"
+			],
+			[
+				"res",
+				"restoreState"
+			],
+			[
+				"A",
+				"A4\timport"
+			],
+			[
+				"para",
+				"ParagraphStyle"
+			],
+			[
+				"he",
+				"height"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tests/test_yaml.py",
+			"settings":
+			{
+				"buffer_size": 487,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tests/test_coverage.py",
+			"settings":
+			{
+				"buffer_size": 158,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".coverage",
+			"settings":
+			{
+				"buffer_size": 4099,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "{\n\t\"build_systems\":\n\t[\n\t\t{\n\t\t\t\"file_regex\": \"^[ ]*File \\\"(...*?)\\\", line ([0-9]*)\",\n\t\t\t\"name\": \"Anaconda Python Builder\",\n\t\t\t\"selector\": \"source.python\",\n\t\t\t\"shell_cmd\": \"\\\"python\\\" -u \\\"$file\\\"\"\n\t\t},\n\t\t{\n\t\t\t\"cmd\":\n\t\t\t[\n\t\t\t\t\"$VIRTUAL_ENV/manage.py test\"\n\t\t\t],\n\t\t\t\"name\": \"Run Tests (Bash Windows)\"\n\t\t}\n\t],\n\t\"folders\":\n\t[\n\t\t{\n\t\t\t\"name\": \"PMA Django\",\n\t\t\t\"path\": \".\"\n\t\t},\n\t\t{\n\t\t\t\"path\": \"C:\\\\Users\\\\jones.ambrosi\\\\AppData\\\\Roaming\\\\Sublime Text 3\\\\Packages\\\\Anaconda\"\n\t\t},\n\t\t{\n\t\t\t\"path\": \"C:\\\\Users\\\\jones.ambrosi\\\\Desktop\\\\GitGutter\"\n\t\t},\n\t\t{\n\t\t\t\"folder_exclude_patterns\":\n\t\t\t[\n\t\t\t\t\"__pycache__\",\n\t\t\t\t\"build\",\n\t\t\t\t\"rocks.*\",\n\t\t\t\t\".tox\",\n\t\t\t\t\".tox\"\n\t\t\t],\n\t\t\t\"name\": \"Rocks\",\n\t\t\t\"path\": \"E:\\\\rocks\"\n\t\t}\n\t],\n\t\"settings\":\n\t{\n\t\t\"anaconda_linting\": true,\n\t\t\"anaconda_linting_behaviour\": \"always\",\n\t\t\"pep257\": false,\n\t\t\"python_interpreter\": \"python\",\n\t\t\"test_command\": \"python -m unittest discover\",\n\t\t\"use_pylint\": false,\n\t\t\"validate_imports\": true\n\t}\n}\n",
+			"file": "/E/dev/pma/program-map-application.sublime-project",
+			"file_size": 935,
+			"file_write_time": 131254304038086509,
+			"settings":
+			{
+				"buffer_size": 947,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "mark",
+		"selected_items":
+		[
+			[
+				"mark",
+				"MarkdownEditing: Markdown Lint"
+			],
+			[
+				"virtua",
+				"Virtualenv: Activate"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"git",
+				"GitGutter: Show Diff Popup"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"anaconda",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"anacon",
+				"Anaconda: Vagrant Up"
+			],
+			[
+				"spy",
+				"Set Syntax: Python"
+			],
+			[
+				"retorm",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"pep8",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"ana",
+				"Anaconda: Set Python interpreter"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 300.0,
+		"history":
+		[
+			"l ",
+			"l - 1",
+			"l = sublime.Region(0, 8)",
+			"sublime.Region(0, 8)",
+			"sublime.Region(",
+			"[1][:]",
+			"class a(): pass; ",
+			"class a(): pass;",
+			"class a(): ; pass;",
+			"class a()",
+			"class a(): pass",
+			"class a():",
+			"GeologicalParameter() ** 10",
+			"0.793136538142434 * 582",
+			"(582 * 1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6378137 )/ (256 * math.pow(2, 7)) * 600)",
+			"0.396568269071217 * 582",
+			"(582 * 1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6378137 )/ (256 * math.pow(2, 6)) * 600)",
+			"396.90069270847175 * 582",
+			"(582 * 1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6372.795 )/ (256 * math.pow(2, 6)) * 600)",
+			"396.90069270847175 * 50",
+			"(582 *1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6372.795 )/ (256 * math.pow(2, 6)) * 600)",
+			"(582 *1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * R_EARTH )/ (256 * math.pow(2, 6)) * 600)",
+			"(582 *1000) / ((math.cos(0 * math.PI/180) * 2 * math.PI * R_EARTH )/ (256 * math.pow(2, 6)) * 600)",
+			"(582 *1000) / ((math.cos(0 * math.PI/180) * 2 * math.PI * R_EARTH )/ (256 * .ath.pow(2, 6)) * 600)",
+			"import math",
+			"(582 *1000) / ((math.cos(0 * math.PI/180) * 2 * math.PI * R_EARTH )/ (256 * .ath.pow(2, 6)) * 600)",
+			"580*2",
+			"locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')",
+			"locale.currency(value)",
+			"value = 1234567.89",
+			"locale.setlocale(locale.LC_ALL, 'us')",
+			"locale.setlocale(locale.LC_ALL, 'br')",
+			"locale.setlocale(locale.LC_ALL, 'pt')",
+			"locale.setlocale(locale.LC_ALL, 'su')",
+			"locale.setlocale(locale.LC_ALL, 'pt_BR')",
+			"import locale",
+			"datetime.now().timestamp()",
+			"datetime.now().time()",
+			"datetime.now() + timedelta(seconds=0)",
+			"from datetime import timedelta",
+			"from datetime import timedelta]",
+			"datetime.now() + timedelta(seconds=0)",
+			"datetime.now()",
+			"utc.now()",
+			"datetime.now(tz=None)",
+			"from datetime import datetime ",
+			"datetime.now(tz=None)",
+			"a.replace('drf__', '')",
+			"a.replace('drf__', ''')",
+			"a.lstrip('drf_')",
+			"a.lstrip('drf')",
+			"a.lstrip('drf_')",
+			"a.lstrip('drf__')",
+			"a = 'drf__date__lte'",
+			"'{0:,.2f}'.format(12.38472387)",
+			"'{0:,.2}'.format(12.38472387)",
+			"'{0:2}'.format(12.38472387)",
+			"'{0:.2}'.format(12.38472387)",
+			"'{0:f.2}'.format(12.38472387)",
+			"'{0:.2}'.format(12.38472387)",
+			"'{0:2}'.format(12.38472387)",
+			"data[1][1]",
+			"data[1][2]",
+			"data[1][3]",
+			"data[4][1]",
+			"data[1][4]",
+			"data = [['', 'SWH (m)', 'Curr (knots)', 'Wind (knots)'],['Jan', 2.0, 6.0, 0.0],['Feb', 2.0, 8.0, 0.0],['Mar', 3.0, 10.0, 0.0],['Apr', 4.0, 6.0, 0.0],['May', 5.0, 2.0, 0.0],['Jun', 6.0, 2.0, 0.0],['Jul', 6.0, 3.0, 0.0],['Aug', 5.0, 6.0, 0.0],['Sep', 3.0, 7.0, 0.0],['Oct', 2.0, 7.0, 0.0],['Nov', 1.0, 8.0, 0.0],['Dec', 1.0, 9.0, 0.0]]",
+			"data  =",
+			"a[:-2]",
+			"a[:2]",
+			"a[::-1]",
+			"a[-1]",
+			"a = [1,2,3,4]",
+			"0 < a < 10",
+			"a = 0",
+			"0 < a < 10",
+			"a",
+			"1 if 0 < a < 10 else 0",
+			"a = 10",
+			"3 % 2 == 0",
+			"3 % 2 == 1",
+			"3 mod 2 == 1",
+			"str(a)",
+			"a = datetime.datetime.now()",
+			"str(a)",
+			"a",
+			"a = datetime.datetime.now()",
+			"import datetime",
+			"datetime",
+			"a[-1]",
+			"a = [(1,2,3,4), (2)]",
+			"a[-1]",
+			"a[:-1]",
+			"a[::-1]",
+			"a",
+			"a = [(1,2,3,4)]",
+			"a",
+			"a = [(1,2,3,4)]",
+			"join(['1','2'], ',')",
+			"['1','2'].join(',')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/rocks",
+		"/E/rocks/.cache/v",
+		"/E/rocks/.cache/v/cache"
+	],
+	"file_history":
+	[
+		"/E/rocks/test_a.py",
+		"/E/rocks/test/test_yaml.py",
+		"/E/sphinx/setup.cfg",
+		"/E/rocks/setup.cfg",
+		"/E/rocks/tests/test_yaml.py",
+		"/E/rocks/setup.py",
+		"/E/testnose/a.py",
+		"/E/testnose/test_me.py",
+		"/E/rocks/tox.ini",
+		"/E/rocks/tests/test_yaml_test.py",
+		"/E/rocks/a.py",
+		"/E/rocks/tests/__init__.py",
+		"/E/rocks/.noserc",
+		"/E/rocks/__init__.py",
+		"/E/dev/pma/program-map-application.sublime-project",
+		"/E/dev/pma/.gitignore",
+		"/E/dev/pma/pma/sitepma/templates/index.html",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/test/testcases.py",
+		"/E/dev/pytox/pma/setup.cfg",
+		"/E/dev/pma/DEPLOY.md",
+		"/E/dev/pma/pma/sitepma/views.py",
+		"/E/dev/pma/pma/reports/pdf.py",
+		"/E/rocks/README.md",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/README.md",
+		"/E/rocks_2/teste.py",
+		"/E/rocks/test/__init__.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/rocks.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/tox.ini",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/setup.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/tox.ini",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/test/__init__.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/rocks_checker.py",
+		"/E/dev/t.py",
+		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/LICENSE",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/messages.json",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/messages/install.txt",
+		"/E/dev/pma/README.md",
+		"/E/dev/pma/pma/pma/settings.py",
+		"/E/dev/pma/pma/maps/static/js/admin_so_utils.js",
+		"/E/dev/pma/pma/templates/gis/openlayers.html",
+		"/E/dev/pma/pma/account/admin.py",
+		"/E/dev/pma/pma/registration/views.py",
+		"/E/dev/pma/pma/maps/admin.py",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/admin/openlayers.js",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/static/gis/js/OLMapWidget.js",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/core/tests/test_multiarray.py",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/openlayers.html",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/forms/widgets.py",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/openlayers-osm.html",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/admin/widgets.py",
+		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/admin/osm.html",
+		"/C/Users/jones.ambrosi/AppData/Local/Continuum/Anaconda3/lib/smtplib.py",
+		"/E/dev/pma/pma/sitepma/static/js/map_so.js",
+		"/E/dev/t.cover",
+		"/E/dev/pma/pma/maps/models.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/static/gis/js/OLMapWidget.js",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/admin/widgets.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/templates/gis/admin/openlayers.html",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/templates/gis/openlayers.html",
+		"/C/Users/jones.ambrosi/Desktop/GitGutter/README.md",
+		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter_change.py",
+		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter_compare.py",
+		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter_handler.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/GitGutter/GitGutter.sublime-settings",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/User/GitGutter.sublime-settings",
+		"/C/Users/jones.ambrosi/Desktop/GitGutter/view_collection.py",
+		"/E/rocks/teste.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/fields/__init__.py",
+		"/E/dev/tmp.py",
+		"/E/dev/pytox/main.py",
+		"/E/dev/pma/pma/maps/survey.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/point.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/geometry.py",
+		"/E/dev/pma/pma/maps/search.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/units.py",
+		"/E/dev/pma/pma/maps/tests.py",
+		"/E/dev/pma/pma/test_log.py",
+		"/E/dev/pma/pma/logging.conf",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/point.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/gdal/geometries.py",
+		"/E/dev/pma/pma/sitepma/templates/map_report.html",
+		"/E/dev/pma/pma/pma/urls.py",
+		"/E/dev/pma/pma/maps/views.py",
+		"/E/dev/pma/pma/reports/pages.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/flowables.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/pdfgen/canvas.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/lib/colors.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/frames.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/doctemplate.py",
+		"/E/dev/pma/pma/pma/logging.conf",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/conf/locale/gl/__init__.py",
+		"/E/dev/pma/pma/pma/logging.yml",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Virtualenv/README.md",
+		"/C/Users/jones.ambrosi/Downloads/tiles%2F33%2FU%2FUP%2FS2A_MSIL1C_20160731T102107_N0204_R065_T33UUP_20160731T233433.SAFE%2FS2A_OPER_MTD_SAFL1C_PDMC_20160731T233433_R065_V20160731T102107_20160731T102107.xml",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/User/Virtualenv.sublime-settings",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Virtualenv/Virtualenv.sublime-settings",
+		"/E/dev/pma/pma/reports/tests.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/distance.py",
+		"/E/dev/pma/pma/reports/admin.py",
+		"/E/dev/pma/pma/account/templatetags/extra_filters.py",
+		"/E/dev/pma/pma/pma/context_processors.py",
+		"/E/dev/pma/pma/account/models.py",
+		"/E/dev/pma/pma/maps/migrations/0017_auto_20161111_1448.py",
+		"/E/dev/pma/pma/maps/migrations/0024_survey_survey_lines.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/polyline/codec.py",
+		"/E/dev/pma/pma/maps/migrations/0006_auto_20161101_1437.py",
+		"/E/dev/pma/pma/pma/env_settings/default_settings.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/lib/styles.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/pdfbase/cidfonts.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/tables.py",
+		"/E/dev/pma/pma/sitepma/forms.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/forms.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/views.py",
+		"/E/dev/pma/pma/registration/forms.py",
+		"/E/dev/pma/pma/pma/env_settings/local_settings_.py",
+		"/E/dev/pma/pma/maps/migrations/0020_auto_20161116_1819.py",
+		"/E/dev/pma/pma/maps/migrations/0018_auto_20161111_1452.py",
+		"/E/dev/pma/pma/sitepma/static/js/lodash.core.js",
+		"/E/dev/pma/pma/pma/env_settings/local_settings_example.py",
+		"/E/dev/pma/pma/templates/base.html",
+		"/E/dev/pma/pma/templates/admin/base.html",
+		"/E/dev/pma/pma/sitepma/__init__.py",
+		"/E/dev/pma/pma/manage.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/commands/__init__.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/Rocks.sublime-settings",
+		"/E/dev/pma/pma/maps/migrations/0017_auto_20161111_1445.py",
+		"/E/dev/pma/pma/templates/admin/change_list.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"-*/bin/*,-*/lib/*,",
+			"-*/bin/*,-*/lib/*,*.HTML",
+			"-*/bin/*,-*/lib/*",
+			"C:\\Users\\jones.ambrosi\\Documents\\GitHub\\django\\django\\contrib\\gis",
+			"",
+			"-*/bin/*,-*/lib/*",
+			"",
+			"-*/bin/*,-*/lib/*",
+			"",
+			"-*/bin/*,-*/lib/*",
+			"",
+			"-*/bin/*,-*/lib/*",
+			"",
+			"C:\\Users\\jones.ambrosi\\AppData\\Roaming\\Sublime Text 3\\Packages\\Anaconda",
+			"",
+			"-*/bin/*,-*/lib/*\t",
+			"",
+			"E:\\dev\\pma\\pma\\maps",
+			"",
+			"-*/bin/*,-*/lib/*\t",
+			"-*/bin/*,-*/lib/*",
+			",-*lib/*",
+			"",
+			"E:\\dev\\pma\\pma\\login\\templates\\registration",
+			"-lib*,-bin*",
+			"-lib/*;-bin/*",
+			"-lib/*,-bin/*",
+			"-*lib/*,-*bin/*",
+			"-*lib/*",
+			"",
+			"*.html,*.css",
+			"*.html",
+			"",
+			"-*.py",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"True",
+			" [Tt]est",
+			" (?:\\b|_)[Tt]est",
+			" ?:\\b|_)[Tt]est",
+			"\"__pycache__\",",
+			"GOOGLE_MAPS_KEY",
+			"KEY=",
+			"AIzaSyAihgk18PI7DURqOY4ZiYStnd3Wyx8L_WM",
+			"        # packages=find_packages(),\n",
+			"',\n",
+			"\n        ",
+			"        #",
+			"rocks_tracker",
+			"sublime",
+			"show_in_minimap",
+			"/usr/pgsql-9.5/bin/psql -p 5432",
+			"\"sonosurv\"",
+			"sonosurv",
+			"CREATE EXTENSION",
+			"this.layers.vector",
+			"this.layers.vector\n",
+			"vector",
+			"layers",
+			"layer",
+			"DrawFeature",
+			"vectors",
+			"point",
+			"defaultHandlerOptions\n",
+			"this.controls",
+			"this.controls\n",
+			"enableEditing",
+			"modi",
+			"this.map",
+			"mapwidget",
+			".on(",
+			"registration_email",
+			"SMTPException",
+			"clearFeatures",
+			"map_options",
+			"modifiable",
+			"openlayers.html",
+			"drawingManager",
+			"MapWidget",
+			"openlayers.html",
+			"editable",
+			"modifiable",
+			"view",
+			"rocks_tracker",
+			"markup.untracked.git_gutter",
+			"F92672",
+			"green",
+			"inserted",
+			"inse",
+			"insert",
+			"inser",
+			"handler",
+			"PointField",
+			"point",
+			"OSMGeoAdmin",
+			"color",
+			"show_in_minimap",
+			"lines_removed",
+			"bind_icons",
+			"all_",
+			"bind_icons",
+			"bind_icons\nbind_icons",
+			"bind_icons",
+			"lines_to_regions",
+			"view_text_point",
+			"lines_to_regions",
+			"bind_icons",
+			"lines_to_regions",
+			"lines_to_regions\n",
+			"text_point",
+			"RocksCommand",
+			"logger",
+			"RocksWindowCommand",
+			"list_per_page",
+			"meters",
+			"country",
+			"countru",
+			"ver",
+			"list_per_page",
+			"Obstruction",
+			"point",
+			"expand_point_polygon",
+			"point",
+			"points",
+			"draw_location_borders_country",
+			"selection_point",
+			"survey.point",
+			"geome",
+			"selection_point",
+			"kms_to_survey",
+			"geopy.Point(",
+			"point",
+			"'point(",
+			"\"point(",
+			"point(",
+			"(point",
+			"point)",
+			"point",
+			"nearby",
+			"obstruc",
+			"calculate_su",
+			"calculate_su]",
+			"calculate_su",
+			"calculate",
+			"obstr",
+			"BlockSurvey",
+			"Point(",
+			"Point((l",
+			"Point(",
+			"survey",
+			"Point:",
+			"point(",
+			"lat_min",
+			"line",
+			"debug",
+			".info",
+			".block",
+			"self.block",
+			"obstru",
+			"survey_block",
+			"survey_path",
+			"calculate_survey_block",
+			"process_survey_block",
+			"process_survey_block]"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"error",
+			"25",
+			"&",
+			",",
+			"(",
+			")",
+			"from",
+			"import",
+			"Country",
+			":\n",
+			"TmpGeo",
+			" \n",
+			"customer",
+			"2",
+			"GOOGLE_MAPS_KEY",
+			"10",
+			"Flowable",
+			")\n",
+			"Paragraph",
+			"\n        ",
+			"Config",
+			"        \n",
+			"0",
+			"l",
+			"from",
+			"search_formations_nearby_point",
+			"            .",
+			"',                       ",
+			"')),\n",
+			"')),",
+			"\n    ",
+			"    ",
+			"class",
+			"           \n",
+			"'",
+			"data",
+			"4",
+			"1"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tests/test_yaml.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								15
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tests/test_coverage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 158,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": ".coverage",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4099,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/E/dev/pma/program-map-application.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								645,
+								642
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 316.0
+	},
+	"output.find_results":
+	{
+		"height": 173.0
+	},
+	"output.mde":
+	{
+		"height": 100.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "Packages/Virtualenv/Python + Virtualenv.sublime-build",
+	"project": "rocks.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				".giri",
+				"PMA Django\\.gitignore"
+			],
+			[
+				"openlayers",
+				"PMA Django\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\gis\\templates\\gis\\openlayers.html"
+			],
+			[
+				"openla",
+				"PMA Django\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\gis\\templates\\gis\\openlayers.html"
+			],
+			[
+				"openlayers.html",
+				"PMA Django\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\gis\\templates\\gis\\admin\\openlayers.html"
+			],
+			[
+				"admin",
+				"PMA Django\\pma\\maps\\admin.py"
+			],
+			[
+				"models",
+				"PMA Django\\pma\\maps\\models.py"
+			],
+			[
+				"surv",
+				"PMA Django\\pma\\maps\\survey.py"
+			],
+			[
+				"modesl",
+				"PMA Django\\pma\\maps\\models.py"
+			],
+			[
+				"colors",
+				"PMA Django\\pma\\lib\\python3.4\\site-packages\\reportlab\\lib\\colors.py"
+			],
+			[
+				"pdf",
+				"PMA Django\\pma\\reports\\pdf.py"
+			],
+			[
+				"test_",
+				"PMA Virtual Env\\test_log.py"
+			],
+			[
+				"pag",
+				"PMA Django\\pma\\reports\\pages.py"
+			],
+			[
+				"ages.",
+				"PMA Django\\pma\\reports\\pages.py"
+			],
+			[
+				"geopy",
+				"PMA Django\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\gis\\gdal\\geometries.py"
+			],
+			[
+				"contex",
+				"PMA Django\\pma\\pma\\context_processors.py"
+			],
+			[
+				"sur",
+				"PMA Django\\pma\\maps\\survey.py"
+			],
+			[
+				"cidfonts",
+				"PMA Django\\pma\\lib\\python3.4\\site-packages\\reportlab\\pdfbase\\cidfonts.py"
+			],
+			[
+				"default_se",
+				"PMA Django\\pma\\pma\\env_settings\\default_settings.py"
+			],
+			[
+				"read",
+				"PMA Django\\README.md"
+			],
+			[
+				"surve",
+				"PMA Django\\pma\\maps\\survey.py"
+			],
+			[
+				"local_settings_.py",
+				"PMA Django\\pma\\pma\\env_settings\\local_settings_.py"
+			],
+			[
+				"defaul_s",
+				"PMA Django\\pma\\pma\\env_settings\\default_settings.py"
+			],
+			[
+				"0020",
+				"PMA Django\\pma\\maps\\migrations\\0020_auto_20161116_1819.py"
+			],
+			[
+				"0018",
+				"PMA Django\\pma\\maps\\migrations\\0018_auto_20161111_1452.py"
+			],
+			[
+				"0017",
+				"PMA Django\\pma\\maps\\migrations\\0017_auto_20161111_1448.py"
+			],
+			[
+				"forms",
+				"PMA Django\\pma\\sitepma\\forms.py"
+			],
+			[
+				"default_",
+				"pma\\pma\\pma\\env_settings\\default_settings.py"
+			],
+			[
+				"forms.",
+				"django-hitcount\\lib\\python2.7\\site-packages\\django\\contrib\\auth\\forms.py"
+			],
+			[
+				"pdf.",
+				"pma\\pma\\reports\\pdf.py"
+			],
+			[
+				"djangodbmigrations",
+				"django-hitcount\\lib\\python2.7\\site-packages\\django\\db\\migrations\\migration.py"
+			],
+			[
+				"djangodbmodels",
+				"django-hitcount\\lib\\python2.7\\site-packages\\django\\db\\models\\__init__.py"
+			],
+			[
+				"djangoforms.py",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\forms\\forms.py"
+			],
+			[
+				"djangodbmodels.py",
+				"django-hitcount\\lib\\python2.7\\site-packages\\django\\db\\models\\__init__.py"
+			],
+			[
+				"mapsadmin",
+				"pma\\pma\\maps\\admin.py"
+			],
+			[
+				"adminbase",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base.html"
+			],
+			[
+				"map_so",
+				"pma\\pma\\sitepma\\static\\js\\map_so.js"
+			],
+			[
+				"views",
+				"pma\\pma\\maps\\views.py"
+			],
+			[
+				"map_",
+				"pma\\pma\\sitepma\\templates\\map_report.html"
+			],
+			[
+				"map_re",
+				"pma\\pma\\sitepma\\templates\\map_report.html"
+			],
+			[
+				"geos.py",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\gis\\geos\\__init__.py"
+			],
+			[
+				"gdal.py",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\gis\\gdal\\__init__.py"
+			],
+			[
+				"admin/base.html",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base.html"
+			],
+			[
+				"admin/base_si",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base_site.html"
+			],
+			[
+				"homeapp",
+				"pma\\home\\apps.py"
+			],
+			[
+				"hometest",
+				"pma\\home\\tests.py"
+			],
+			[
+				"homeview",
+				"pma\\home\\views.py"
+			],
+			[
+				"url",
+				"pma\\pma\\urls.py"
+			],
+			[
+				"views.",
+				"pma\\home\\views.py"
+			],
+			[
+				"index",
+				"pma\\home\\templates\\index.html"
+			],
+			[
+				"base.css",
+				"pma\\home\\static\\css\\base.css"
+			],
+			[
+				"base.html",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base.html"
+			],
+			[
+				"base_site.html",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base_site.html"
+			],
+			[
+				"create",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\registration\\password_reset_email.html"
+			],
+			[
+				"registration",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\registration\\password_change_form.html"
+			],
+			[
+				"createsuperuser",
+				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\auth\\management\\commands\\createsuperuser.py"
+			],
+			[
+				"manage.py",
+				"pma\\manage.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 295.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

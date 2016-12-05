@@ -11,8 +11,8 @@ setup(
     author='Jones Ambrosi',
     author_email='jones@centrimobi.com.br',
     url='http://rocks.io/',
-    # test_suite='nose.collector',
+    test_suite='nose2.collector.collector',
     # packages=find_packages(),
-    packages=['test'],
+    packages=['rocks'],
     # namespace_packages=['test']
 )

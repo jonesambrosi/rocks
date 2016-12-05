@@ -1,0 +1,55 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		},
+		{
+			"cmd":
+			[
+				"tox"
+			],
+			"name": "Run Tests (Bash Windows)"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\jones.ambrosi\\AppData\\Roaming\\Sublime Text 3\\Packages\\Anaconda"
+		},
+		{
+			"path": "C:\\Users\\jones.ambrosi\\Desktop\\GitGutter"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				"__pycache__",
+				"build",
+				"rocks.*",
+				".cache",
+				".tox"
+			],
+			"name": "Rocks",
+			"path": "."
+		},
+		{
+			"path": "E:\\test_rocks"
+		},
+		{
+			"path": "E:\\dev\\pma"
+		}
+	],
+	"settings":
+	{
+		"anaconda_linting": true,
+		"anaconda_linting_behaviour": "always",
+		"pep257": false,
+		"python_interpreter": "python",
+		"test_command": "python -m tox",
+		"use_pylint": false,
+		"validate_imports": true
+	}
+}
