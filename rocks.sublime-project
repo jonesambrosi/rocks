@@ -18,10 +18,7 @@
 	"folders":
 	[
 		{
-			"path": "C:\\Users\\jones.ambrosi\\AppData\\Roaming\\Sublime Text 3\\Packages\\Anaconda"
-		},
-		{
-			"path": "C:\\Users\\jones.ambrosi\\Desktop\\GitGutter"
+			"path": "E:\\dev\\pma"
 		},
 		{
 			"folder_exclude_patterns":
@@ -39,7 +36,7 @@
 			"path": "E:\\test_rocks"
 		},
 		{
-			"path": "E:\\dev\\pma"
+			"path": "E:\\dev\\python-runtime"
 		}
 	],
 	"settings":
@@ -47,7 +44,6 @@
 		"anaconda_linting": true,
 		"anaconda_linting_behaviour": "always",
 		"pep257": false,
-		"python_interpreter": "python",
 		"test_command": "python -m tox",
 		"use_pylint": false,
 		"validate_imports": true
