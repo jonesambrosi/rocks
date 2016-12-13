@@ -1,8 +1,4 @@
-# try:
-#     # don't execute this in sublime text
-#     import sublime
-# except ImportError:
-from distutils.core import setup
+from distutils.core import setup  # , find_packages
 
 setup(
     name='rocks',
@@ -11,8 +7,8 @@ setup(
     author='Jones Ambrosi',
     author_email='jones@centrimobi.com.br',
     url='http://rocks.io/',
-    test_suite='nose2.collector.collector',
-    # packages=find_packages(),
-    packages=['rocks'],
-    # namespace_packages=['test']
+    # test_suite='nose2.collector.collector',
+    packages=['rocks.rocks'],
+    # namespace_packages=['tests'],
+    # packages=find_packages()
 )

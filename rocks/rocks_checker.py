@@ -2,11 +2,12 @@ import sublime
 import trace
 import logging
 import sys
+import os
 try:
     from StringIO import StringIO as StringIO
 except (ImportError, ValueError):
     from io import StringIO as StringIO
-
+from rocks.core.rocks_coverage import check_code
 
 logger = logging.getLogger(__name__)
 # logger.addHandler(logging.StreamHandler(sys.stdout))
@@ -21,6 +22,7 @@ rocks_tracker = trace.Trace(count=1, trace=1, countfuncs=0, countcallers=0, igno
 class RocksChecker:
     # Todo: these aren't really views but handlers. Refactor/Rename.
     views = {}
+    coverage = None
 
     @staticmethod
     def add(view):
@@ -52,7 +54,15 @@ class RocksChecker:
             return RocksChecker.add(view)
 
     @staticmethod
+    def get_coverage(view):
+        path = os.path.dirname(view.file_name())
+        RocksChecker.coverage = check_code(path)
+
+    @staticmethod
     def all_lines(view):
+        if RocksChecker.coverage is None:
+            RocksChecker.get_coverage(view)
+
         logger.debug("all_lines")
         chars = view.size()
         region = sublime.Region(0, chars)
@@ -61,8 +71,7 @@ class RocksChecker:
         logger.debug("%s", view.substr(region))
         rocks_tracker.run(view.substr(region))
 
-        # trace.CoverageResults.
-        r = rocks_tracker.results()
+        r = RocksChecker.coverage.analise2(view.file_name())
 
         logger.debug(r)
         return range(0, len(lines))

@@ -2,14 +2,13 @@ import sublime
 import sublime_plugin
 
 import os
-import logging
 import sys
+import logging
 
 try:
     from .rocks_checker import RocksChecker
 except (ImportError, ValueError):
-    from rocks_checker import RocksChecker
-
+    from rocks.rocks_checker import RocksChecker
 
 ST3 = int(sublime.version()) >= 3000
 
@@ -17,7 +16,7 @@ LOOP_RUNNING = False
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 
 def plugin_loaded() -> None:
@@ -25,6 +24,7 @@ def plugin_loaded() -> None:
     """
     global settings
     settings = sublime.load_settings('Rocks.sublime-settings')
+    print("load")
 
     if not LOOP_RUNNING:
         print("unloop")
@@ -38,7 +38,7 @@ def plugin_unloaded() -> None:
         print("Loop")
 
 
-def change_position_view(view):
+def change_position_view(view) -> None:
     pt = view.text_point(0, 3)
     view.sel().clear()
     view.sel().add(sublime.Region(pt))
@@ -171,7 +171,7 @@ class RocksCommand(sublime_plugin.TextCommand):
 class BackgroundChecker(sublime_plugin.EventListener):
     """Background linter, can be turned off via plugin settings
     """
-
+    
     def on_modified(self, view: sublime.View) -> None:
         logger.debug('.')
         if 'py' in view.settings().get('syntax'):

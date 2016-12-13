@@ -10,5 +10,7 @@ class TestReadingStructures(unittest.TestCase):
 
         data = rocks_coverage.check_code('/mnt/e/test_rocks')
 
-        print(data)
+        # print(data, data[0].line_counts())
+
         assert data is not None
+        assert data[0].line_counts() != {}

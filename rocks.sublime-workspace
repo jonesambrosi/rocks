@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"rocs",
+				"rocks_checker"
+			],
+			[
+				"search_weather_nearby_point_",
+				"search_weather_nearby_point_12_months\tfunction"
+			],
+			[
 				"coor",
 				"coord"
 			],
@@ -506,133 +514,18 @@
 			[
 				"font",
 				"font-family"
-			],
-			[
-				"lo",
-				"logger\tstatement"
-			],
-			[
-				"hi",
-				"high_quality"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/E/dev/pma/pma/sitepma/templates/map_report.html",
+			"file": "rocks/rocks.py",
 			"settings":
 			{
-				"buffer_size": 16653,
+				"buffer_size": 5448,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "import logging\nimport math\nimport numpy as np\nimport polyline\nimport geopy\nimport json\nimport urllib.request\nfrom urllib.error import HTTPError\nfrom datetime import datetime\nfrom geopy.distance import distance, EARTH_RADIUS\nfrom geopy.units import radians, degrees\nfrom django.conf import settings\nfrom django.db import connection\nfrom django.db.models import Min\nfrom django.contrib.gis.geos import GEOSGeometry, Point, LineString\nfrom django.contrib.gis.measure import D\nfrom django.contrib.gis.db.models.functions import Distance\nfrom account.models import Customer\nfrom .search import (\n    search_depth_from_point, search_formations_nearby_point,\n    search_nearby_block, search_nearby_blocks\n)\nfrom .models import (\n    Obstruction, EquipmentConfig, Survey,\n    TmpGeo, Config, Weather, Port, Vessel\n)\n\ntry:\n    configs = Config.objects.get(id=1)\n    settings.RECAPTCHA_PUBLIC_KEY = configs.google_recaptcha_public\n    settings.RECAPTCHA_PRIVATE_KEY = configs.google_recaptcha_private\n    settings.RECAPTCHA_USE_SSL = configs.google_recaptcha_use_ssl\n    settings.GOOGLE_MAPS_KEY = configs.google_maps\nexcept:\n    settings.RECAPTCHA_PUBLIC_KEY = \"TEMP\"\n    settings.RECAPTCHA_PRIVATE_KEY = \"TEMP\"\n    settings.RECAPTCHA_USE_SSL = \"TEMP\"\n    settings.GOOGLE_MAPS_KEY = \"TEMP\"\n    logger.warning(\"Object Config not created before migration\")\n\n\nlogger = logging.getLogger(__name__)\n\n\nclass BlockSurvey():\n    \"\"\"Survey path object\n    \"\"\"\n\n    def __init__(self, point,\n                 formation,\n                 survey=None):\n\n        if survey:\n            assert survey.block is not None\n            assert survey.selection_point is not None\n\n            self.block = survey.block\n            self.point = survey.selection_point\n            self.survey = survey\n\n            # self.lat_min, self.lon_min, self.lat_max, self.lon_max = self.get_lats_longs()\n\n            logger.debug(\"Block: %s \", self.block)\n            logger.debug(\"Point: %s \", self.point)\n            # logger.debug(\"point length (%s, %s) (%s, %s)\",\n            # self.lat_min, self.lon_min, self.lat_max, self.lon_max)\n            logger.debug(\">>>>>>>>>>> point width %s, %s ||| %s, %s\",\n                         self.get_lats_longs())\n\n        else:\n            assert point is not None\n            self.survey = Survey()\n            self.survey.geological_parameter = formation\n            self.point = self.survey.selection_point = point\n            lng, lat = self.point.x, self.point.y\n\n            block = search_nearby_block(lat, lng)\n            assert block is not None\n            assert block[0] is not None\n            self.block = self.survey.block = block[0]\n\n            km_lat, km_lng = kms_to_survey(lat, lng, self.block)\n            self.survey.survey_block = expand_point_polygon(\n                (lat, lng), km_lat, km_lng)\n\n            logger.debug('(%s %s)', lat, lng)\n            logger.debug(\"Block: %s \", self.block)\n            logger.debug(\"Point: %s \", self.point)\n\n        self.weathers = search_weather_nearby_point(\n            self.point.x, self.point.y).order_by('month')[:12]\n\n    def get_block_survey(self):\n        \"\"\"Genetare WKT path format\n        \"\"\"\n        # return GEOSGeometry(\"POLYGON (({2} {0}, {2} {1}, {3} {1}, {3} {0}, {2} {0}))\"\n        #                     .format(self.lat_min, self.lat_max,\n        #                             self.lon_min, self.lon_max))\n\n        assert self.survey.survey_block is not None\n\n        return self.survey.survey_block\n\n    def get_formation(self):\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n\n        return self.survey.geological_parameter\n\n    def get_block(self):\n        assert self.block is not None\n\n        return self.block\n\n    def get_geological_objective(self):\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n\n        return self.survey.geological_parameter.formation_name\n\n    def get_geological_parameter(self):\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n\n        return self.survey.geological_parameter\n\n    def get_target_depth(self):\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n\n        return self.survey.geological_parameter.formation_depth\n\n    def get_aperture(self):\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n\n        return self.survey.geological_parameter.aperture\n\n    def get_orientation(self):\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n\n        if self.survey.geological_parameter.dip_direction == \\\n                self.survey.geological_parameter.survey_rotation:\n            return \"NE-SW\"\n        else:\n            return \"SW-NE\"\n\n    def get_depth_from_selection_point(self):\n        return search_depth_from_point(self.point.y, self.point.x)\n\n    def get_path_survey(self):\n        \"\"\"Genetare WKT path format\n        \"\"\"\n\n        equip = self.survey.survey_equipment\n        fractions = self.fraction_lon_curve_path(\n            kilometers=float(equip.width) / 1000) if equip else []\n\n        out = \"LINESTRING ({0})\" \\\n            .format(\",\".join([\"{0} {1}\".format(X[0], X[1]) for X in fractions]))\n\n        return out\n\n    def get_block_survey_enc(self):\n        data = [(C[1], C[0])\n                for C in self.survey.survey_block.coords[0]]\n        enc = polyline.encode(data, 5)\n\n        return \"path=weight:1%7Cfillcolor:0xAAAA0033%7Ccolor:0xFFFF00FF%7Cenc:{0}\".format(enc)\n\n    def get_path_survey_enc(self):\n\n        data = [(C[1], C[0])\n                for C in self.survey.vessel_path.coords]\n        enc = polyline.encode(data, 5)\n        return \"path=weight:1%7Cfillcolor:0xAA000033%7Ccolor:0xAA0000FF%7Cenc:{0}\".format(enc)\n\n    def get_obstructions(self):\n        lat, lng = self.point.y, self.point.x\n\n        km_lat, km_lng = kms_to_survey(lat, lng, self.get_block())\n\n        # Adding 20% to block area\n        km_lat = km_lat * 1.2\n        km_lng = km_lng * 1.2\n\n        origin = geopy.Point(lat, lng)\n        radius_search = math.hypot(km_lat, km_lng) / 2\n\n        return search_obstruction_nearby_point(lat, lng, radius_search)\n\n    def get_obstructions_enc(self):\n        data = [\"{},{}\".format(C.point.x, C.point.y)\n                for C in self.get_obstructions()]\n\n        return \"markers=size:small%7Ccolor:0xAA0000%7C{0}\".format(\"%7C\".join(data))\n\n    def get_obstruction_density(self):\n        \"\"\"Calculate density nearby selected point\n        \"\"\"\n        obst = self.get_obstructions().count()\n        if obst < 10:\n            return Obstruction.LOW\n        elif 10 <= obst < 30:\n            return Obstruction.MEDIUM\n        elif obst >= 30:\n            return Obstruction.HIGH\n\n    def get_equipment_search(self):\n        \"\"\"Get equipament for formations and obstructions\n        \"\"\"\n        assert self.survey is not None\n        assert self.survey.geological_parameter is not None\n        assert self.survey.geological_parameter.water_depth is not None\n        assert self.survey.geological_parameter.formation_depth is not None\n\n        equipments = search_equipments(\n            self.survey.geological_parameter.formation_depth,\n            self.survey.geological_parameter.water_depth,\n            self.get_obstruction_density())\n\n        assert len(equipments) > 0\n\n        return equipments[0]\n\n    def get_number_lines(self):\n        \"\"\" Get survey qty lines\n        \"\"\"\n        return self.survey.survey_lines\n\n    def get_streamer_depth(self):\n        \"\"\" Get streamer depth\n        \"\"\"\n        geom = self.get_geological_parameter()\n        formation_depth = geom.formation_depth\n\n        if 0 < formation_depth <= 500:\n            return 4\n        if 500 < formation_depth <= 1500:\n            return 6\n        if 1500 < formation_depth <= 3000:\n            return 8\n        if formation_depth > 3000:\n            return 9\n\n        return 0\n\n    def info_lines(self, kilometers=10):\n        positions = self.get_lats_longs()\n        lat = math.radians(positions[0])\n        lng = math.radians(positions[1])\n\n        radius = 6371.007176\n        parallel_radius = radius * math.cos(lat)\n\n        lon_total = math.radians(positions[3]) - math.radians(positions[1])\n        lon_add = lon_total / (kilometers / parallel_radius)\n\n        offset = (kilometers / 2) / parallel_radius\n\n        return lon_add, lng, parallel_radius, offset\n\n    def fraction_lon_curve_path(self, kilometers=10):\n        \"\"\"Calculate points to curve vessel path\n        \"\"\"\n        positions = self.get_lats_longs()\n        lines, lng, parallel_radius, offset = self.info_lines(kilometers)\n        nth = range(int(lines))\n        for i in nth:\n            lng_calc = lng + offset + (kilometers / parallel_radius) * i\n            if i % 2 == 1:\n                yield (math.degrees(lng_calc), positions[0])\n                yield (math.degrees(lng_calc), positions[2])\n                if i != nth[-1]:\n                    points = calculate_arc_point(\n                        math.radians(positions[2]),\n                        lng_calc + offset, offset,\n                        3,\n                        -90.0, 90.0)\n                    for p in points:\n                        yield p\n            else:\n                yield (math.degrees(lng_calc), positions[2])\n                yield (math.degrees(lng_calc), positions[0])\n                if i != nth[-1]:\n                    points = calculate_arc_point(\n                        math.radians(positions[0]),\n                        lng_calc + offset, offset,\n                        3,\n                        -90.0, -270.0)\n                    for point in points:\n                        yield point\n\n    def get_acquisition_windows(self):\n        kms = 0.0\n        last_point = None\n        for point in self.survey.vessel_path:\n            if last_point is None:\n                last_point = point\n            else:\n                kms += distance(last_point, point).km\n                last_point = point\n\n        weathers = search_weather_nearby_point(\n            self.point.y, self.point.x).order_by('downtime')[:12]\n\n        # First, convert knots to meters per second: 12 * 0.514 = 6.168 m/s\n        survey_duration_seconds = kms * 1000.0 / \\\n            (self.survey.survey_equipment.aquisition_speed * 0.514)\n\n        # Calculate acquisition\n        acquisition_window = survey_duration_seconds / \\\n            (weathers[0].downtime + 1)\n\n        return acquisition_window\n\n    def get_duration(self):\n\n        # Distance port\n        distance_closest_port = search_port_nearby_point(\n            self.point.y, self.point.x)\n\n        if len(distance_closest_port) > 0:\n            survey_transit_time = distance_closest_port[0].distance.m / \\\n                self.get_vessel_transit_speed() * 0.514\n        else:\n            survey_transit_time = 0\n\n        return self.get_acquisition_windows() + survey_transit_time\n\n    def get_port_nearby(self):\n        return search_port_nearby_point(self.point.y, self.point.x)\n\n    def get_lats_longs(self):\n        lats = [c[1] for c in self.survey.survey_block.coords[0]]\n        lngs = [c[0] for c in self.survey.survey_block.coords[0]]\n\n        return (min(lats), min(lngs), max(lats), max(lngs))\n\n    def get_length(self):\n        \"\"\"a.   Survey area length (meters):\n            i.  (2 * aperture) + (block_count * block_length)\n                + (0.5 * equipment_length).\n        \"\"\"\n\n        lat_min, lon_min, lat_max, lon_max = self.get_lats_longs()\n        line = LineString([(lat_min, lon_min),\n                           (lat_max, lon_min)], srid=4326)\n\n        length = distance(line.coords[0], line.coords[1]).m\n\n        logger.debug(\">>> Line, Length (%s, %s)\", line, length)\n        logger.debug(\">>> Point Length (%s, %s) (%s, %s)\", lat_min,\n                     lon_min, lat_max, lon_max)\n\n        equip = self.survey.survey_equipment.length\n        aperture = self.survey.geological_parameter.aperture\n\n        logger.debug(\"equip, aperture, length (%s, %s, %s)\", equip,\n                     aperture, ((aperture * 2.0) + length + (0.5 * equip)) / 1000.0)\n\n        return ((aperture * 2.0) + length + (0.5 * equip)) / 1000.0\n\n    def get_width(self):\n        \"\"\"b.   Survey area width (meters):\n            i.  (2 * aperture) + (block_count * block_width)\n                + (0.5 * equipment_width).\"\"\"\n\n        # self.lat_min, self.lon_min, self.lat_max, self.lon_max = self.get_lats_longs()\n\n        lat_min, lon_min, lat_max, lon_max = self.get_lats_longs()\n        line = LineString([(lat_min, lon_min),\n                           (lat_min, lon_max)], srid=4326)\n        width = distance(line.coords[0], line.coords[1]).m\n        logger.debug(\">>>>>>>>>>> line, width ||| %s |||  %s)\", line, width)\n        # logger.debug(\">>>>>>>>>>> point width %s, %s ||| %s, %s\", self.lat_min,\n        #              self.lon_min, self.lat_max, self.lon_max)\n        logger.debug(\">>>>>>>>>>> Point 2 %s, %s ||| %s, %s\",\n                     lat_min, lon_min, lat_max, lon_max)\n\n        equip = self.survey.survey_equipment.width\n        aperture = self.survey.geological_parameter.aperture\n        return ((2 * aperture) + width + (0.5 * equip)) / 1000.0\n\n    def get_date(self):\n        return self.survey.date\n\n    def get_cost(self):\n\n        try:\n            survey_cost = (self.get_duration() / (60 * 60 * 24)) * \\\n                self.survey.vessels.all()[0].daily_cost\n\n            return survey_cost\n        except:\n            return 0\n\n    def get_vessel_transit_speed(self):\n        try:\n            return self.survey.vessels.all()[0].transit_speed\n        except:\n            return 1\n\n    def get_vessel_name(self):\n        try:\n            return self.survey.vessels.all()[0].name\n        except:\n            return 'Unknown'\n\n    def get_block_country(self):\n        return self.block.country.iso_code\n\n    def save(self, user):\n        self.survey.block = self.get_block()\n        logger.info(\"Block: %s \", self.survey.block)\n        self.survey.user = user\n        self.survey.obstruction = self.get_obstruction_density()\n        self.survey.geological_parameter = self.get_formation()\n        self.survey.survey_equipment = self.get_equipment_search()\n\n        self.survey.selection_point = self.point\n        logger.info(\"Point: %s \", self.point)\n        logger.info(\"Selection_point: %s \", self.survey.selection_point)\n\n        self.survey.vessel_path = self.get_path_survey()\n        self.survey.survey_block = self.get_block_survey()\n\n        equip = self.survey.survey_equipment\n        number_lines = self.info_lines(kilometers=float(equip.width) / 1000)[0]\n\n        self.survey.survey_lines = number_lines\n        self.survey.save()\n\n        for vessel in self.get_vessels():\n            self.survey.vessels.add(vessel)\n\n        self.survey.acquisition_window = self.get_acquisition_windows()\n        self.survey.cost = self.get_cost()\n        self.survey.duration = self.get_duration()\n\n        self.survey.save()\n\n        # Rorate paths\n        cursor = connection.cursor()\n\n        if self.survey.geological_parameter.dip_direction == self.survey.geological_parameter.survey_rotation:\n            # NE\n            cursor.execute(\"\"\"\n                UPDATE maps_survey\n                   SET vessel_path = ST_Rotate(\n                        vessel_path,\n                        {0},\n                        ST_Centroid(survey_block)),\n                       survey_block = ST_Rotate(\n                        survey_block,\n                        {0},\n                        ST_Centroid(survey_block))\n                 WHERE id = {1}\n             \"\"\".format(-np.pi / 4, self.survey.id))\n\n        else:\n            # SW\n            cursor.execute(\"\"\"\n                UPDATE maps_survey\n                   SET vessel_path = ST_Rotate(\n                        vessel_path,\n                        {0},\n                        ST_Centroid(survey_block)),\n                       survey_block = ST_Rotate(\n                        survey_block,\n                        {0},\n                        ST_Centroid(survey_block))\n                 WHERE id = {1}\n             \"\"\".format(np.pi / 4 + np.pi / 2, self.survey.id))\n\n        cursor.close()\n\n        self.survey = Survey.objects.get(pk=self.survey.id)\n\n    def get_vessels(self):\n        return search_vessel_nearby_point(self.point.y, self.point.x)\n\n    def get_user(self):\n        try:\n            customer = Customer.objects.get(pk=self.survey.user.id)\n            return customer\n        except:\n            return self.survey.user\n\n    def get_nearby_blocks(self):\n        \"\"\" Search blocks on 1000km distance to draw\n        \"\"\"\n        return search_nearby_blocks(self.point.y, self.point.x, 1000)\n\n    def get_nearby_blocks_enc(self):\n\n        leaseholder_grey = []\n        leaseholder_light = []\n\n        customer = self.get_user()\n        company = customer.company_name if hasattr(\n            customer, 'company_name') else \"\"\n\n        for block in self.get_nearby_blocks()[:50]:\n            logger.debug(\"leaseholder: %s,company: %s\",\n                         block.leaseholder, company)\n            if block.leaseholder == company:\n                leaseholder_grey.append(block.get_raw_block_coords())\n            elif block.leaseholder is not None and block.leaseholder != company:\n                leaseholder_light.append(block.get_raw_block_coords())\n\n        logger.debug(\"leaseholder_light: %s, leaseholder_grey: %s\",\n                     leaseholder_light, leaseholder_grey)\n\n        for block in leaseholder_grey:\n            enc = polyline.encode(block, 5)\n            yield \"path=weight:1%7Cfillcolor:0x00880033%7Ccolor:0x008800FF%7Cenc:{0}\".format(enc)\n\n        for block in leaseholder_light:\n            enc = polyline.encode(block, 5)\n            yield \"path=weight:1%7Cfillcolor:0xAAAAAA33%7Ccolor:0xAAAAAAFF%7Cenc:{0}\".format(enc)\n\n    # def calculate_scale_map(self, map_zoom_level=1):\n    #     \"\"\" Return Km per pixel\n\n    #     From reference\n    #     https://code.google.com/p/gmaps-api-issues/issues/detail?id=4189\n    #     \"\"\"\n    #     return (MAP_SCALE_WIDTH * 1000) /\n    #         ((math.cos(self.point[0] * math.PI / 180) * 2 *\n    # math.PI * EARTH_RADIUS) / (256 * math.pow(2, map_zoom_level)) * 600)\n\n    def get_url_index_map(self, quality):\n        lat, lng = self.point\n        url = ('https://maps.googleapis.com/maps/api/staticmap?'\n               'size=768x1024&center={0},{1}'\n               '&style=feature:landscape%7Celement:'\n               'geometry.fill%7Ccolor:0xFAE6BA%7Cvisibility:on'\n               '&style=feature:administrative%7Celement:'\n               'labels%7Cweight:3.9%7Cvisibility:on%7Cinverse_lightness:true'\n               '&style=feature:poi%7Cvisibility:simplified'\n               '&markers=color:red%7C{0},{1}'\n               '&key={3}'\n               '&format=png32&scale={2}'\n               ).format(lat, lng,\n                        quality,\n                        settings.GOOGLE_MAPS_KEY)\n\n        return url\n\n    def get_url_survey_location(self, quality):\n        lat, lng = self.point\n\n        url = ('https://maps.googleapis.com/maps/api/staticmap?'\n               'center={0},{1}&zoom=7&size=800x600&maptype=satellite'\n               '&markers=color:red%7Clabel:A%7C{0},{1}'\n               '&key={3}'\n               '&format=png32&scale={2}'\n               '&{4}'\n               # '&{5}'\n               ).format(lat, lng, quality,\n                        settings.GOOGLE_MAPS_KEY,\n                        self.get_block_survey_enc()\n                        # ,self.get_path_survey_enc()\n                        )\n        return url\n\n    def get_customer_name(self):\n        customer_obj = self.get_user()\n\n        if hasattr(customer_obj, 'company_name'):\n            customer = customer_obj.company_name\n\n        customer = \"{0} {1}\".format(customer_obj.first_name,\n                                    customer_obj.last_name)\n\n        return customer\n\n    def get_timezone_from_point(self, point=None):\n\n        if point is None:\n            point = self.point\n\n        try:\n            url = 'https://maps.googleapis.com/maps/api/timezone/json?location={0},{1}&timestamp={2}&key={3}'.format(\n                point.y,\n                point.x,\n                datetime.now().timestamp(),\n                settings.GOOGLE_MAPS_KEY)\n\n            logger.debug(\"Url: %s\", url)\n\n            with urllib.request.urlopen(url) as req:\n\n                data = req.readall().decode('utf-8')\n                conv = json.loads(data)\n                logger.debug(\"Data¨%s\", data)\n                timezone = {}\n                timezone['gmt'] = (conv['rawOffset'] +\n                                   conv['dstOffset']) / 3600\n                timezone['timeZoneId'] = conv['timeZoneId']\n                timezone['timeZoneName'] = conv['timeZoneName']\n\n                return timezone\n\n        except HTTPError as ex:\n            logger.debug(ex.read())\n        except Exception as ex:\n            logger.debug(ex)\n\n        return {\n            'timeZoneId': 'Unknown',\n            'timeZoneName': 'Unknown',\n            'gmt': 0\n        }\n\n\ndef search_obstruction_nearby_point(lat, lng, kilometers):\n    \"\"\"Search block nearby point\n    \"\"\"\n    point = GEOSGeometry('POINT({1} {0})'.format(lat, lng), srid=4326)\n    qs = Obstruction.objects.annotate(distance=Distance('point', point)).filter(\n        point__distance_lte=(point, D(km=kilometers)))\n\n    return qs\n\n\ndef search_equipments(formation_depth, water_depth, obstruction):\n    \"\"\"6.   Use the Equipment Configuration table to lookup equipment\n            configuration close to the lat/lon selected.\n\n    a.  The formation depth must be within the min and max allowed\n        range, i.e.: formation_depth_max >=  formation_depth >= formation_depth_min.\n    b.  The water_depth value must be greater than the minimum_water_depth.\n    c.  In case of multiple results, use the streamers_range value to determine\n        which configuration to select:\n\n        i. Select the record with largest value for the streamers column if streamers_range = 3.\n        ii. Select the record with smallest value for the streamers column if streamers_range = 1.\n        iii. If there are 3 or more values then select the record with the smallest\n             value of streamers that is within the max and min values of streamers\n             from the returned results\n    \"\"\"\n\n    streamer_range = 0\n    if obstruction == Obstruction.LOW:\n        streamer_range = EquipmentConfig.LARGE\n    elif obstruction == Obstruction.MEDIUM:\n        streamer_range = EquipmentConfig.MEDIUM\n    elif obstruction == Obstruction.HIGH:\n        streamer_range = EquipmentConfig.LOW\n\n    query = EquipmentConfig.objects \\\n        .filter(formation_depth_min__lte=formation_depth) \\\n        .filter(formation_depth_max__gte=formation_depth) \\\n        .filter(minimum_water_depth__lte=water_depth)\n\n    if streamer_range == EquipmentConfig.LARGE:\n        query = query.order_by(\"-streamers\")\n        return query[:1]\n    elif streamer_range == EquipmentConfig.LOW:\n        query = query.order_by(\"streamers\")\n        return query[:1]\n    else:\n        query = query.order_by(\"streamers\")\n        res = query\n        # if have >= 3 itens return second\n        if len(res) >= 3:\n            return [res[1]]\n        # if have < 3 itens return first\n        elif len(res) > 0:\n            return [res[0]]\n\n    return []\n\n\ndef calculate_arc_point(cx, cy, r, fractions, start_angle, end_angle):\n    assert fractions >= 0 and fractions <= 90\n    assert r > 0\n\n    direction = (end_angle - start_angle)\n    angle = start_angle\n    inc_angle = direction / (fractions + 1)\n\n    while fractions > 0:\n        angle += inc_angle\n\n        x = r * np.cos(math.radians(angle)) + cx  # pylint: 0103\n        y = r * np.sin(math.radians(angle)) + cy\n        fractions -= 1\n\n        yield (math.degrees(y), math.degrees(x))\n\n\ndef search_weather_nearby_point(lat, lng):\n    \"\"\"Find for weather and return them\n    \"\"\"\n    point = GEOSGeometry('POINT({1} {0})'.format(lat, lng), srid=4326)\n    query = Weather.objects \\\n        .annotate(distance=Distance('point', point)) \\\n        .aggregate(Avg('month'))\n    # .aggregate(min_distance=Min('distance'))\n    # res = query[:12]\n\n    minimun = {\n        '1': 0,\n        '2': 0,\n        '3': 0,\n        '4': 0,\n        '5': 0,\n        '6': 0,\n        '7': 0,\n        '8': 0,\n        '9': 0,\n        '10': 0,\n        '11': 0,\n        '12': 0\n    }\n\n    return query\n\n\ndef search_port_nearby_point(lat, lng):\n    \"\"\"Find for port and return them\n    \"\"\"\n    point = GEOSGeometry('POINT({1} {0})'.format(lat, lng), srid=4326)\n    query = Port.objects \\\n        .annotate(distance=Distance('point', point)) \\\n\n    return query.order_by('distance')[:1]\n\n\ndef search_vessel_nearby_point(lat, lng):\n    \"\"\"Find for vessel and return them\n    \"\"\"\n    point = GEOSGeometry('POINT({1} {0})'.format(lat, lng), srid=4326)\n    query = Vessel.objects \\\n        .annotate(distance=Distance('point', point)) \\\n\n    return query.order_by('distance')[:3]\n\n\ndef expand_point_polygon(point, km_lat, km_lng):\n\n    lat, lng = (point[0], point[1])\n    logger.info('2 (%s %s)', lat, lng)\n\n    origin = geopy.Point(lat, lng)\n    logger.debug(\"Point (%s %s)  Origin: (%s %s)\",\n                 lat, lng, origin[1], origin[0])\n\n    hyp = math.hypot(km_lat, km_lng)\n    p1 = distance(kilometers=hyp / 2).destination(\n        origin, 45.0 + 180.0)\n\n    p2 = distance(kilometers=hyp / 2).destination(\n        origin, 45.0)\n\n    logger.info(\"hyp: %s (%s %s) (%s %s)\",\n                hyp, p1.longitude, p1.latitude,\n                p2.longitude, p2.latitude)\n\n    return GEOSGeometry(\"POLYGON (({2} {0}, {2} {1}, {3} {1}, {3} {0}, {2} {0}))\"\n                        .format(p2.latitude, p1.latitude,\n                                p2.longitude, p1.longitude))\n\n\ndef kms_to_survey(lat, lng, block):\n    assert lat >= -90.0 and lat <= 90.0\n    assert lng >= -180.0 and lng <= 180.0\n\n    block_count = 1\n    configs = Config.objects.all()[:1]\n\n    if configs:\n        block_count = configs[0].block_count\n    else:\n        logger.warning('Configs not setted!')\n\n    return (block.height / 1000 * block_count,\n            block.width / 1000 * block_count)\n\n\ndef process_survey_block(lat, lng, formation):\n\n    point = GEOSGeometry('POINT({1} {0})'.format(lat, lng), srid=4326)\n    box = BlockSurvey(\n        point,\n        formation\n    )\n\n    return box\n",
-			"file": "/E/dev/pma/pma/maps/survey.py",
-			"file_size": 27381,
-			"file_write_time": 131257856531734590,
-			"settings":
-			{
-				"buffer_size": 26585,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/aggregates.py",
-			"settings":
-			{
-				"buffer_size": 5058,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/expressions.py",
-			"settings":
-			{
-				"buffer_size": 31750,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/maps/models.py",
-			"settings":
-			{
-				"buffer_size": 13125,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 264 files for \"get_raw_block_coords\"\n\nE:\\dev\\pma\\pma\\maps\\models.py:\n  201          return self.survey_block\n  202  \n  203:     def get_raw_block_coords(self):\n  204          from .survey import expand_point_polygon\n  205  \n\nE:\\dev\\pma\\pma\\maps\\survey.py:\n  505                           block.leaseholder, company)\n  506              if block.leaseholder == company:\n  507:                 leaseholder_grey.append(block.get_raw_block_coords())\n  508              elif block.leaseholder is not None and block.leaseholder != company:\n  509:                 leaseholder_light.append(block.get_raw_block_coords())\n  510  \n  511          logger.debug(\"leaseholder_light: %s, leaseholder_grey: %s\",\n\n3 matches across 2 files\n\n\nSearching 264 files for \"get_geom_block\"\n\nE:\\dev\\pma\\pma\\maps\\models.py:\n  190              self.country.name, self.width, self.height)\n  191  \n  192:     def get_geom_block(self):\n  193          from .survey import expand_point_polygon\n  194  \n\n1 match in 1 file\n\n\nSearching 264 files for \"get_geom_block(\"\n\nE:\\dev\\pma\\pma\\maps\\models.py:\n  190              self.country.name, self.width, self.height)\n  191  \n  192:     # def get_geom_block(self):\n  193      #     from .survey import expand_point_polygon\n  194  \n\n1 match in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 1267,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/maps/search.py",
-			"settings":
-			{
-				"buffer_size": 2600,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/point.py",
-			"settings":
-			{
-				"buffer_size": 5969,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/lib/python3.4/site-packages/geopy/point.py",
-			"settings":
-			{
-				"buffer_size": 12080,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/reports/tests.py",
-			"settings":
-			{
-				"buffer_size": 3090,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/sitepma/views.py",
-			"settings":
-			{
-				"buffer_size": 7359,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/maps/admin.py",
-			"settings":
-			{
-				"buffer_size": 10568,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/dev/pma/pma/maps/tests.py",
-			"settings":
-			{
-				"buffer_size": 8856,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -643,10 +536,34 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "pep",
+		"height": 196.0,
+		"last_filter": "markdown",
 		"selected_items":
 		[
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"",
+				"GitGutter: Show Diff Popup"
+			],
+			[
+				"mardown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"marke",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
 			[
 				"pep",
 				"User: Python PEP8 Autoformat"
@@ -656,16 +573,8 @@
 				"Package Control: Create Package File"
 			],
 			[
-				"markdown",
-				"Markdown Preview: Preview in Browser"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
 			],
 			[
 				"mark",
@@ -674,10 +583,6 @@
 			[
 				"virtua",
 				"Virtualenv: Activate"
-			],
-			[
-				"",
-				"Anaconda: Set Python interpreter"
 			],
 			[
 				"git",
@@ -712,13 +617,29 @@
 				"Anaconda: Set Python interpreter"
 			]
 		],
-		"width": 432.0
+		"width": 400.0
 	},
 	"console":
 	{
 		"height": 228.0,
 		"history":
 		[
+			"tracer = trace.Trace(",
+			"import trace",
+			"import sys",
+			"sublime.version()",
+			"os.version",
+			"import os",
+			"ls",
+			"ls ",
+			"ls",
+			"a",
+			"a = 1",
+			"a",
+			"reload",
+			"]",
+			"reload_plugins",
+			"reload",
 			"l ",
 			"l - 1",
 			"l = sublime.Region(0, 8)",
@@ -834,43 +755,81 @@
 	[
 		"/E/dev/pma",
 		"/E/dev/pma/pma",
-		"/E/dev/pma/pma/maps",
-		"/E/dev/pma/pma/reports",
-		"/E/dev/pma/pma/sitepma"
+		"/E/rocks",
+		"/E/rocks/icons",
+		"/E/rocks/messages",
+		"/E/rocks/rocks",
+		"/E/test_rocks",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda"
 	],
 	"file_history":
 	[
-		"/E/dev/pma/pma/maps/views.py",
-		"/E/dev/pma/pma/maps/tests.py",
-		"/E/dev/pma/pma/maps/survey.py",
+		"/E/rocks/setup.py",
+		"/E/rocks/core/rocks_coverage.py",
+		"/E/rocks/core/rocks_checker.py",
+		"/E/dev/pma/nginx.conf",
+		"/C/Users/jones.ambrosi/Documents/Downloads/soundoceanics.com/soundoceanics.com/soundoceanics.key",
+		"/E/rocks/rocks/rocks_coverage.py",
+		"/E/rocks/rocks.py",
+		"/E/dev/pma/DEPLOY.md",
+		"/E/rocks/version.py",
+		"/E/rocks/messages.json",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Preferences.sublime-settings",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/results.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
+		"/E/test_rocks/test_simple.py",
+		"/E/rocks/.coveragerc",
+		"/E/rocks/tests/test_coverage.py",
+		"/E/test_rocks/.coveragerc",
+		"/E/rocks/rocks/rocks_checker.py",
+		"/E/rocks/tox.ini",
+		"/E/test_rocks/__init__.py",
+		"/E/rocks/rocks.sublime-project",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/distutils/core.py",
+		"/E/rocks/rocks/rocks.py",
+		"/E/rocks/rocks/coverage_process.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/tox/_pytestplugin.py",
+		"/E/test_rocks/sitecustomize.py",
+		"/E/test_rocks/.pth",
+		"/E/rocks/.coverage",
+		"/E/rocks/tests/simple_test.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/data.py",
+		"/E/test_rocks/.coverage.AUSTRIA.2430.148356",
+		"/E/test_rocks/util_class.py",
+		"/E/rocks/.coverage.AUSTRIA.2304.749921",
+		"/E/dev/python-runtime/scripts/install-apt-packages.sh",
 		"/E/dev/pma/pma/reports/pdf.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/utils/datetime_safe.py",
+		"/E/dev/pma/pma/sitepma/templates/map_report.html",
+		"/E/dev/python-runtime/Makefile",
+		"/E/dev/python-runtime/Dockerfile3",
+		"/E/dev/pma/pma/maps/models.py",
+		"/E/dev/pma/pma/maps/survey.py",
+		"/E/dev/pma/pma/pma/settings.py",
+		"/E/dev/pma/pma/maps/admin.py",
+		"/E/dev/pma/pma/maps/tests.py",
 		"/E/dev/pma/pma/logging.conf",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/aggregates.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/expressions.py",
+		"/E/dev/pma/pma/maps/search.py",
+		"/E/dev/pma/pma/sitepma/views.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/point.py",
+		"/E/dev/pma/pma/reports/tests.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/point.py",
+		"/E/dev/pma/pma/maps/views.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/utils/datetime_safe.py",
 		"/E/dev/pma/program-map-application.sublime-project",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/test/testcases.py",
-		"/E/test_rocks/util_class.py",
-		"/E/rocks/rocks.sublime-project",
-		"/E/rocks/rocks/rocks_coverage.py",
-		"/E/test_rocks/.coveragerc",
-		"/E/rocks/tests/test_coverage.py",
-		"/E/test_rocks/test_simple.py",
-		"/E/test_rocks/sitecustomize.py",
 		"/C/Users/jones.ambrosi/Downloads/pylint-1.6.4.xml",
-		"/E/rocks/.coverage",
 		"/E/rocks/DOCS.md",
 		"/E/rocks/DOCS.MD",
 		"/E/test_rocks/test_me.py",
 		"/E/rocks/setup.cfg",
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rsub/rsub.sublime-settings",
-		"/E/rocks/.coveragerc",
 		"/E/rocks/requirements.txt",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
 		"/E/rocks/tests/test_yaml.py",
-		"/E/rocks/tox.ini",
 		"/E/rocks/test_a.py",
 		"/E/rocks/test/test_yaml.py",
 		"/E/sphinx/setup.cfg",
-		"/E/rocks/setup.py",
 		"/E/testnose/a.py",
 		"/E/testnose/test_me.py",
 		"/E/rocks/tests/test_yaml_test.py",
@@ -881,8 +840,6 @@
 		"/E/dev/pma/.gitignore",
 		"/E/dev/pma/pma/sitepma/templates/index.html",
 		"/E/dev/pytox/pma/setup.cfg",
-		"/E/dev/pma/DEPLOY.md",
-		"/E/dev/pma/pma/sitepma/views.py",
 		"/E/rocks/README.md",
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/README.md",
 		"/E/rocks_2/teste.py",
@@ -899,12 +856,10 @@
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/messages.json",
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/messages/install.txt",
 		"/E/dev/pma/README.md",
-		"/E/dev/pma/pma/pma/settings.py",
 		"/E/dev/pma/pma/maps/static/js/admin_so_utils.js",
 		"/E/dev/pma/pma/templates/gis/openlayers.html",
 		"/E/dev/pma/pma/account/admin.py",
 		"/E/dev/pma/pma/registration/views.py",
-		"/E/dev/pma/pma/maps/admin.py",
 		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/admin/openlayers.js",
 		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/static/gis/js/OLMapWidget.js",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/core/tests/test_multiarray.py",
@@ -916,7 +871,6 @@
 		"/C/Users/jones.ambrosi/AppData/Local/Continuum/Anaconda3/lib/smtplib.py",
 		"/E/dev/pma/pma/sitepma/static/js/map_so.js",
 		"/E/dev/t.cover",
-		"/E/dev/pma/pma/maps/models.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/static/gis/js/OLMapWidget.js",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/admin/widgets.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/templates/gis/admin/openlayers.html",
@@ -932,42 +886,12 @@
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/fields/__init__.py",
 		"/E/dev/tmp.py",
 		"/E/dev/pytox/main.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/point.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/geometry.py",
-		"/E/dev/pma/pma/maps/search.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/units.py",
 		"/E/dev/pma/pma/test_log.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/point.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/gdal/geometries.py",
-		"/E/dev/pma/pma/sitepma/templates/map_report.html",
 		"/E/dev/pma/pma/pma/urls.py",
-		"/E/dev/pma/pma/reports/pages.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/flowables.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/pdfgen/canvas.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/lib/colors.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/frames.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/doctemplate.py",
-		"/E/dev/pma/pma/pma/logging.conf",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/conf/locale/gl/__init__.py",
-		"/E/dev/pma/pma/pma/logging.yml",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Virtualenv/README.md",
-		"/C/Users/jones.ambrosi/Downloads/tiles%2F33%2FU%2FUP%2FS2A_MSIL1C_20160731T102107_N0204_R065_T33UUP_20160731T233433.SAFE%2FS2A_OPER_MTD_SAFL1C_PDMC_20160731T233433_R065_V20160731T102107_20160731T102107.xml",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/User/Virtualenv.sublime-settings",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Virtualenv/Virtualenv.sublime-settings",
-		"/E/dev/pma/pma/reports/tests.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/distance.py",
-		"/E/dev/pma/pma/reports/admin.py",
-		"/E/dev/pma/pma/account/templatetags/extra_filters.py",
-		"/E/dev/pma/pma/pma/context_processors.py",
-		"/E/dev/pma/pma/account/models.py",
-		"/E/dev/pma/pma/maps/migrations/0017_auto_20161111_1448.py",
-		"/E/dev/pma/pma/maps/migrations/0024_survey_survey_lines.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/polyline/codec.py",
-		"/E/dev/pma/pma/maps/migrations/0006_auto_20161101_1437.py",
-		"/E/dev/pma/pma/pma/env_settings/default_settings.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/lib/styles.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/pdfbase/cidfonts.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/reportlab/platypus/tables.py"
+		"/E/dev/pma/pma/reports/pages.py"
 	],
 	"find":
 	{
@@ -978,6 +902,7 @@
 		"height": 102.0,
 		"where_history":
 		[
+			"",
 			"-*/bin/*,-*/lib/*,",
 			"-*/bin/*,-*/lib/*,*.HTML",
 			"-*/bin/*,-*/lib/*",
@@ -1020,6 +945,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"coverage",
+			"RocksCommand",
+			"views",
+			"views]",
+			"views",
+			"except",
+			"}\n",
+			"sitecustomize.py",
+			"No data was collected.",
+			"sessi",
+			"greenlet",
+			"INFO",
+			"simpleFormatter",
+			"\nVessel Data",
+			"search_weather_nearby_point_12_months",
+			"weathers",
+			"weathers\n",
+			"weathers",
+			"self.weathers",
+			"weathers",
+			"weathers\n",
+			"search_weather_nearby_point",
+			"search_weather_nearby_point_12_months",
 			"search_weather_nearby_point",
 			"line",
 			"* 2",
@@ -1124,30 +1072,7 @@
 			"defaultHandlerOptions\n",
 			"this.controls",
 			"this.controls\n",
-			"enableEditing",
-			"modi",
-			"this.map",
-			"mapwidget",
-			".on(",
-			"registration_email",
-			"SMTPException",
-			"clearFeatures",
-			"map_options",
-			"modifiable",
-			"openlayers.html",
-			"drawingManager",
-			"MapWidget",
-			"openlayers.html",
-			"editable",
-			"modifiable",
-			"view",
-			"rocks_tracker",
-			"markup.untracked.git_gutter",
-			"F92672",
-			"green",
-			"inserted",
-			"inse",
-			"insert"
+			"enableEditing"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1155,6 +1080,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\n    ",
 			"None",
 			"error",
 			"25",
@@ -1204,463 +1130,37 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/dev/pma/pma/sitepma/templates/map_report.html",
+					"file": "rocks/rocks.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16653,
+						"buffer_size": 5448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11535,
-								11535
+								244,
+								244
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3435.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/dev/pma/pma/maps/survey.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26585,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								24394,
-								24394
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": ".",
-									"selector": "source.python - string - comment - constant.numeric"
-								},
-								{
-									"characters": ".",
-									"selector": "source.python - string - constant.numeric"
-								}
-							],
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10521.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/aggregates.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5058,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2541,
-								2541
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 810.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/expressions.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 31750,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16009,
-								16009
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6618.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/E/dev/pma/pma/maps/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13125,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": ".",
-									"selector": "source.python - string - comment - constant.numeric"
-								},
-								{
-									"characters": ".",
-									"selector": "source.python - string - constant.numeric"
-								}
-							],
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1267,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										142,
-										162
-									],
-									[
-										431,
-										451
-									],
-									[
-										597,
-										617
-									],
-									[
-										891,
-										905
-									],
-									[
-										1160,
-										1175
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								998,
-								998
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 3,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 480.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/E/dev/pma/pma/maps/search.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2600,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								320,
-								320
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/point.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5969,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								352,
-								352
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 720.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/E/dev/pma/pma/lib/python3.4/site-packages/geopy/point.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12080,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3153,
-								3153
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1265.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/E/dev/pma/pma/reports/tests.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3090,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								903,
-								903
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/E/dev/pma/pma/sitepma/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7359,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4824,
-								4824
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2185.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "/E/dev/pma/pma/maps/admin.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10568,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6923,
-								6923
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2952.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/E/dev/pma/pma/maps/tests.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8856,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8466,
-								8466
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": ".",
-									"selector": "source.python - string - comment - constant.numeric"
-								},
-								{
-									"characters": ".",
-									"selector": "source.python - string - constant.numeric"
-								}
-							],
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3228.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1726,6 +1226,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"settings",
+				"pma\\pma\\pma\\settings.py"
+			],
 			[
 				"surve",
 				"pma\\pma\\maps\\survey.py"
@@ -1979,7 +1483,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 295.0,
+	"side_bar_width": 313.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
