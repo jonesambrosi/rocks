@@ -2,12 +2,6 @@
 	"build_systems":
 	[
 		{
-			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
-			"name": "Anaconda Python Builder",
-			"selector": "source.python",
-			"shell_cmd": "\"python\" -u \"$file\""
-		},
-		{
 			"cmd":
 			[
 				"tox"
@@ -36,16 +30,22 @@
 			"path": "E:\\test_rocks"
 		},
 		{
-			"path": "C:\\Users\\jones.ambrosi\\AppData\\Roaming\\Sublime Text 3\\Packages\\Anaconda"
+			"path": "E:\\GitGutter"
 		}
 	],
 	"settings":
 	{
-		"anaconda_linting": true,
-		"anaconda_linting_behaviour": "always",
+		// "anaconda_linting": true,
+		// "anaconda_linting_behaviour": "always",
 		"pep257": false,
-		"test_command": "python -m tox",
+		// "test_command": "python -m tox",
 		"use_pylint": false,
-		"validate_imports": true
+		"validate_imports": true,
+        "python_interpreter": "C:\\Users\\jones.ambrosi\\AppData\\Local\\Programs\\Python\\Python35\\python.exe"
+	},
+	"sublimegerrit:E:\\rocks\\rocks.sublime-project":
+	{
+		"project.branch": "pma-91",
+		"project.name": "pma"
 	}
 }

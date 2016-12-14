@@ -520,11 +520,19 @@
 	"buffers":
 	[
 		{
-			"file": "rocks/rocks.py",
+			"file": "rocks.py",
 			"settings":
 			{
-				"buffer_size": 5448,
+				"buffer_size": 3538,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/test_rocks/test_simple.py",
+			"settings":
+			{
+				"buffer_size": 282,
 				"line_ending": "Windows"
 			}
 		}
@@ -537,9 +545,37 @@
 	"command_palette":
 	{
 		"height": 196.0,
-		"last_filter": "markdown",
+		"last_filter": "channel",
 		"selected_items":
 		[
+			[
+				"channel",
+				"Package Control: Add Channel"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"python",
+				"Python Refactor: Extract Method"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"gst",
+				"Git: Status"
+			],
+			[
+				"sspyt",
+				"Set Syntax: Python"
+			],
 			[
 				"markdown",
 				"Markdown Preview: Preview in Browser"
@@ -561,20 +597,12 @@
 				"Package Control: Install Package"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
 				"pep",
 				"User: Python PEP8 Autoformat"
 			],
 			[
 				"create",
 				"Package Control: Create Package File"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"mark",
@@ -605,10 +633,6 @@
 				"User: Python PEP8 Autoformat"
 			],
 			[
-				"INSTALL",
-				"Package Control: Install Package"
-			],
-			[
 				"pep8",
 				"Anaconda: Autoformat PEP8 Errors"
 			],
@@ -617,13 +641,31 @@
 				"Anaconda: Set Python interpreter"
 			]
 		],
-		"width": 400.0
+		"width": 616.0
 	},
 	"console":
 	{
-		"height": 228.0,
+		"height": 320.0,
 		"history":
 		[
+			"sys.version",
+			"import sys",
+			"os.python ",
+			"os.versions",
+			"os.version",
+			"import os ",
+			"version",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(exec)",
+			"sublime.log_commands(True)",
+			"ExecCommand = exec",
+			"ExecCommand = exec.ExecCommand",
+			"ExecCommand = __import__('exec').ExecCommand",
+			"target",
+			"exec",
+			"exec.ExecCommand",
+			"exec",
+			"__import__('exec')",
 			"tracer = trace.Trace(",
 			"import trace",
 			"import sys",
@@ -733,13 +775,7 @@
 			"a = [(1,2,3,4), (2)]",
 			"a[-1]",
 			"a[:-1]",
-			"a[::-1]",
-			"a",
-			"a = [(1,2,3,4)]",
-			"a",
-			"a = [(1,2,3,4)]",
-			"join(['1','2'], ',')",
-			"['1','2'].join(',')"
+			"a[::-1]"
 		]
 	},
 	"distraction_free":
@@ -753,40 +789,48 @@
 	},
 	"expanded_folders":
 	[
-		"/E/dev/pma",
-		"/E/dev/pma/pma",
 		"/E/rocks",
-		"/E/rocks/icons",
-		"/E/rocks/messages",
-		"/E/rocks/rocks",
+		"/E/rocks/tests",
 		"/E/test_rocks",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda"
+		"/E/GitGutter"
 	],
 	"file_history":
 	[
+		"/E/test_rocks/test_simple.py",
+		"/e/GitGutter/git_gutter_popup.py",
+		"/E/test_rocks/util_class.py",
+		"/E/rocks/rocks_coverage.py",
+		"/E/rocks/rocks_checker.py",
+		"/E/rocks/rocks.sublime-project",
+		"/E/rocks/tests/test_coverage.py",
+		"/E/rocks/rocks.py",
+		"/E/rocks/Rocks.sublime-settings",
 		"/E/rocks/setup.py",
+		"/E/rocks/rocks/rocks.py",
+		"/E/rocks/dependencies.json",
+		"/E/dev/pma/pma/maps/admin.py",
+		"/E/rocks/rocks/rocks_coverage.py",
+		"/E/test_rocks/.coveragerc",
+		"/E/rocks/.coveragerc",
+		"/E/rocks/rocks/install_coverage.py",
+		"/E/dev/pma/pma/registration/views.py",
+		"/E/rocks/rocks/rocks_checker.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/pip/_vendor/distlib/_backport/tarfile.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/messages/context_processors.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/messages/constants.py",
 		"/E/rocks/core/rocks_coverage.py",
 		"/E/rocks/core/rocks_checker.py",
 		"/E/dev/pma/nginx.conf",
 		"/C/Users/jones.ambrosi/Documents/Downloads/soundoceanics.com/soundoceanics.com/soundoceanics.key",
-		"/E/rocks/rocks/rocks_coverage.py",
-		"/E/rocks/rocks.py",
 		"/E/dev/pma/DEPLOY.md",
 		"/E/rocks/version.py",
 		"/E/rocks/messages.json",
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Preferences.sublime-settings",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/results.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
-		"/E/test_rocks/test_simple.py",
-		"/E/rocks/.coveragerc",
-		"/E/rocks/tests/test_coverage.py",
-		"/E/test_rocks/.coveragerc",
-		"/E/rocks/rocks/rocks_checker.py",
 		"/E/rocks/tox.ini",
 		"/E/test_rocks/__init__.py",
-		"/E/rocks/rocks.sublime-project",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/distutils/core.py",
-		"/E/rocks/rocks/rocks.py",
 		"/E/rocks/rocks/coverage_process.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/tox/_pytestplugin.py",
 		"/E/test_rocks/sitecustomize.py",
@@ -795,7 +839,6 @@
 		"/E/rocks/tests/simple_test.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/data.py",
 		"/E/test_rocks/.coverage.AUSTRIA.2430.148356",
-		"/E/test_rocks/util_class.py",
 		"/E/rocks/.coverage.AUSTRIA.2304.749921",
 		"/E/dev/python-runtime/scripts/install-apt-packages.sh",
 		"/E/dev/pma/pma/reports/pdf.py",
@@ -805,7 +848,6 @@
 		"/E/dev/pma/pma/maps/models.py",
 		"/E/dev/pma/pma/maps/survey.py",
 		"/E/dev/pma/pma/pma/settings.py",
-		"/E/dev/pma/pma/maps/admin.py",
 		"/E/dev/pma/pma/maps/tests.py",
 		"/E/dev/pma/pma/logging.conf",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/aggregates.py",
@@ -859,7 +901,6 @@
 		"/E/dev/pma/pma/maps/static/js/admin_so_utils.js",
 		"/E/dev/pma/pma/templates/gis/openlayers.html",
 		"/E/dev/pma/pma/account/admin.py",
-		"/E/dev/pma/pma/registration/views.py",
 		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/admin/openlayers.js",
 		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/static/gis/js/OLMapWidget.js",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/core/tests/test_multiarray.py",
@@ -882,16 +923,7 @@
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/GitGutter/GitGutter.sublime-settings",
 		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/User/GitGutter.sublime-settings",
 		"/C/Users/jones.ambrosi/Desktop/GitGutter/view_collection.py",
-		"/E/rocks/teste.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/fields/__init__.py",
-		"/E/dev/tmp.py",
-		"/E/dev/pytox/main.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/geometry.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/units.py",
-		"/E/dev/pma/pma/test_log.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/gdal/geometries.py",
-		"/E/dev/pma/pma/pma/urls.py",
-		"/E/dev/pma/pma/reports/pages.py"
+		"/E/rocks/teste.py"
 	],
 	"find":
 	{
@@ -902,6 +934,11 @@
 		"height": 102.0,
 		"where_history":
 		[
+			"e:\\GitGutter",
+			"e:\\gitgutter\\*.*",
+			"e:\\gitgutter\\*",
+			"e:\\gitgutter",
+			"-*/bin/*,-*/lib/*",
 			"",
 			"-*/bin/*,-*/lib/*,",
 			"-*/bin/*,-*/lib/*,*.HTML",
@@ -945,6 +982,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"view",
+			"gutter_popup",
+			"_popup",
+			"popup",
+			"coverage",
+			"all_lines",
+			"path",
+			"StringIO",
+			"sublime",
+			"staticmethod",
+			"coverage",
+			"Rocks",
+			"all_lines",
+			"rocks_tracker",
+			"python",
+			"´python",
+			"proc",
+			"finish",
+			"ExecCommand",
+			"dependencies",
+			".js",
+			"runner",
+			"print",
+			".')\n",
+			"initial_value",
+			"add_mes",
+			"messages",
+			"error",
+			":\n",
 			"coverage",
 			"RocksCommand",
 			"views",
@@ -1043,36 +1109,7 @@
 			"survey_block",
 			"row\"",
 			"True",
-			" [Tt]est",
-			" (?:\\b|_)[Tt]est",
-			" ?:\\b|_)[Tt]est",
-			"\"__pycache__\",",
-			"GOOGLE_MAPS_KEY",
-			"KEY=",
-			"AIzaSyAihgk18PI7DURqOY4ZiYStnd3Wyx8L_WM",
-			"        # packages=find_packages(),\n",
-			"',\n",
-			"\n        ",
-			"        #",
-			"rocks_tracker",
-			"sublime",
-			"show_in_minimap",
-			"/usr/pgsql-9.5/bin/psql -p 5432",
-			"\"sonosurv\"",
-			"sonosurv",
-			"CREATE EXTENSION",
-			"this.layers.vector",
-			"this.layers.vector\n",
-			"vector",
-			"layers",
-			"layer",
-			"DrawFeature",
-			"vectors",
-			"point",
-			"defaultHandlerOptions\n",
-			"this.controls",
-			"this.controls\n",
-			"enableEditing"
+			" [Tt]est"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1080,6 +1117,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"logging",
+			"\n            ",
 			"\n    ",
 			"None",
 			"error",
@@ -1130,24 +1169,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "rocks/rocks.py",
+					"file": "rocks.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5448,
+						"buffer_size": 3538,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								244,
-								244
+								789,
+								789
 							]
 						],
 						"settings":
@@ -1157,7 +1196,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 493.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/test_rocks/test_simple.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1226,6 +1293,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"contribconstants",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\messages\\constants.py"
+			],
 			[
 				"settings",
 				"pma\\pma\\pma\\settings.py"

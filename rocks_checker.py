@@ -1,22 +1,27 @@
 import sublime
-import trace
+# import trace
 import logging
-import sys
+# import sys
 import os
+# try:
+#     from StringIO import StringIO as StringIO
+# except (ImportError, ValueError):
+#     from io import StringIO as StringIO
 try:
-    from StringIO import StringIO as StringIO
+    from .rocks_coverage import check_code
 except (ImportError, ValueError):
-    from io import StringIO as StringIO
-from rocks.core.rocks_coverage import check_code
+    from rocks.rocks.rocks_coverage import check_code
+
 
 logger = logging.getLogger(__name__)
 # logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
 
-tracker_out_last = StringIO()
-tracker_out = StringIO()
-rocks_tracker = trace.Trace(count=1, trace=1, countfuncs=0, countcallers=0, ignoremods=(
-), ignoredirs=(), infile=None, outfile=tracker_out, timing=True)
+# tracker_out_last = StringIO()
+# tracker_out = StringIO()
+# rocks_tracker = trace.Trace(count=1, trace=1, countfuncs=0,
+#                             countcallers=0, ignoremods=(), ignoredirs=(),
+#                             infile=None, outfile=tracker_out, timing=True)
 
 
 class RocksChecker:
@@ -55,12 +60,19 @@ class RocksChecker:
 
     @staticmethod
     def get_coverage(view):
+        logger.debug("file_name: %s", view.file_name())
         path = os.path.dirname(view.file_name())
+        logger.debug("Path: %s", path)
         RocksChecker.coverage = check_code(path)
+        logger.debug("RocksChecker.coverage: %s", RocksChecker.coverage)
 
     @staticmethod
     def all_lines(view):
+        if view.file_name() is None:
+            return None
+
         if RocksChecker.coverage is None:
+            logger.debug("View: %s", view)
             RocksChecker.get_coverage(view)
 
         logger.debug("all_lines")
@@ -69,9 +81,11 @@ class RocksChecker:
         lines = view.lines(region)
 
         logger.debug("%s", view.substr(region))
-        rocks_tracker.run(view.substr(region))
+        # rocks_tracker.run(view.substr(region))
 
-        r = RocksChecker.coverage.analise2(view.file_name())
+        logger.debug("file_name analysis2: %s", view.file_name())
+        r = RocksChecker.coverage.analysis2(view.file_name())
 
         logger.debug(r)
+
         return range(0, len(lines))
