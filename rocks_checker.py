@@ -12,7 +12,7 @@ try:
 except (ImportError, ValueError):
     from rocks.rocks.rocks_coverage import check_code
 
-
+print("check_code", check_code)
 logger = logging.getLogger(__name__)
 # logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
@@ -60,10 +60,12 @@ class RocksChecker:
 
     @staticmethod
     def get_coverage(view):
-        logger.debug("file_name: %s", view.file_name())
+        logger.debug("Get Coverage: %s", view)
         path = os.path.dirname(view.file_name())
         logger.debug("Path: %s", path)
-        RocksChecker.coverage = check_code(path)
+        data = check_code(path)
+        logger.debug("Data: %s", data)
+        RocksChecker.coverage = data
         logger.debug("RocksChecker.coverage: %s", RocksChecker.coverage)
 
     @staticmethod
@@ -72,15 +74,15 @@ class RocksChecker:
             return None
 
         if RocksChecker.coverage is None:
-            logger.debug("View: %s", view)
             RocksChecker.get_coverage(view)
 
         logger.debug("all_lines")
+
         chars = view.size()
         region = sublime.Region(0, chars)
         lines = view.lines(region)
 
-        logger.debug("%s", view.substr(region))
+        # logger.debug("%s", view.substr(region))
         # rocks_tracker.run(view.substr(region))
 
         logger.debug("file_name analysis2: %s", view.file_name())

@@ -4,6 +4,78 @@
 		"selected_items":
 		[
 			[
+				"sele",
+				"select2"
+			],
+			[
+				"peri",
+				"periodo_inicial"
+			],
+			[
+				"da",
+				"django-teste-form"
+			],
+			[
+				"eX",
+				"ExampleForm\t(class)"
+			],
+			[
+				"ate",
+				"Atendimento\t(class)"
+			],
+			[
+				"admin",
+				"adminform\t(statement)"
+			],
+			[
+				"atendime",
+				"AtendimentosForm\t(class)"
+			],
+			[
+				"alta",
+				"alta_final"
+			],
+			[
+				"perio",
+				"periodo_final"
+			],
+			[
+				"lo",
+				"logger\t(statement)"
+			],
+			[
+				"WA",
+				"warning\t(function)"
+			],
+			[
+				"Haco",
+				"HaocUserManager\t(class)"
+			],
+			[
+				"get",
+				"get_user_model"
+			],
+			[
+				"cov",
+				"coverage"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text-",
+				"text-right"
+			],
+			[
+				"AT",
+				"atendimento\t(statement)"
+			],
+			[
+				"pt",
+				"path\t(param)"
+			],
+			[
 				"rocs",
 				"rocks_checker"
 			],
@@ -372,10 +444,6 @@
 				"BlockSurvey"
 			],
 			[
-				"get",
-				"get_obstruction_density"
-			],
-			[
 				"fromation",
 				"formation_depth"
 			],
@@ -446,94 +514,35 @@
 			[
 				"Use",
 				"UserAdmin\tclass"
-			],
-			[
-				"blan",
-				"BLANK_CHOICE_DASH"
-			],
-			[
-				"templa",
-				"Template\timport"
-			],
-			[
-				"ba",
-				"background"
-			],
-			[
-				"mar",
-				"margin-top"
-			],
-			[
-				"ma",
-				"margin-bottom"
-			],
-			[
-				"col-md-",
-				"col-md-12"
-			],
-			[
-				"ac",
-				"action"
-			],
-			[
-				"cons",
-				"contains"
-			],
-			[
-				"dra",
-				"drawingControlOptions"
-			],
-			[
-				"low_",
-				"low_quality\tparam"
-			],
-			[
-				"col",
-				"col-xs-12"
-			],
-			[
-				"send_",
-				"send_pdf_email\tfunction"
-			],
-			[
-				"re",
-				"request\tparam"
-			],
-			[
-				"to",
-				"to_email"
-			],
-			[
-				"atta",
-				"attach_mime\tparam"
-			],
-			[
-				"ema",
-				"email_message\tstatement"
-			],
-			[
-				"font",
-				"font-family"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "rocks.py",
+			"file": "/E/dev/django-teste-form/teste/home/views.py",
 			"settings":
 			{
-				"buffer_size": 3538,
+				"buffer_size": 2599,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/E/dev/django-teste-form/teste/home/templates/home.html",
+			"settings":
+			{
+				"buffer_size": 1153,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/test_rocks/test_simple.py",
+			"file": "/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
 			"settings":
 			{
-				"buffer_size": 282,
-				"line_ending": "Windows"
+				"buffer_size": 13373,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -544,10 +553,54 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 196.0,
-		"last_filter": "channel",
+		"height": 127.0,
+		"last_filter": "format",
 		"selected_items":
 		[
+			[
+				"format",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"package",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"insta",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sspyt",
+				"Set Syntax: Python"
+			],
+			[
+				"doc",
+				"Python: Get documentation"
+			],
+			[
+				"ssdj",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"python",
+				"Python Refactor: Organize Imports"
+			],
+			[
+				"create",
+				"Snippet: CreateView"
+			],
+			[
+				"refac",
+				"Python Refactor: Extract Method"
+			],
 			[
 				"channel",
 				"Package Control: Add Channel"
@@ -557,24 +610,12 @@
 				"Package Control: Install Package"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"python",
-				"Python Refactor: Extract Method"
-			],
-			[
 				"INSTALL",
 				"Package Control: Install Package"
 			],
 			[
 				"gst",
 				"Git: Status"
-			],
-			[
-				"sspyt",
-				"Set Syntax: Python"
 			],
 			[
 				"markdown",
@@ -599,10 +640,6 @@
 			[
 				"pep",
 				"User: Python PEP8 Autoformat"
-			],
-			[
-				"create",
-				"Package Control: Create Package File"
 			],
 			[
 				"mark",
@@ -645,9 +682,28 @@
 	},
 	"console":
 	{
-		"height": 320.0,
+		"height": 258.0,
 		"history":
 		[
+			"sublime.version()",
+			"version()",
+			"sublime.arch()",
+			"sublime.platform()",
+			"sublime.packages_path()",
+			"sublime.installed_packages_path()",
+			"sublime.os",
+			"sublime.os()",
+			"sublime.plataform()",
+			"sublime.plataform",
+			"sublime.version()",
+			"sublime.version().",
+			"coverage",
+			"os.path.dirname('e:\\\\dev\\\\saudht\\\\teste.csv\\\\s')",
+			"os.path.dirname('e:\\\\dev\\\\saudht\\\\teste.csv')",
+			"os.path.basename('e:\\\\dev\\\\saudht\\\\teste.csv')",
+			"import os ",
+			"self.__file__",
+			"__file__",
 			"sys.version",
 			"import sys",
 			"os.python ",
@@ -756,26 +812,7 @@
 			"a[-1]",
 			"a = [1,2,3,4]",
 			"0 < a < 10",
-			"a = 0",
-			"0 < a < 10",
-			"a",
-			"1 if 0 < a < 10 else 0",
-			"a = 10",
-			"3 % 2 == 0",
-			"3 % 2 == 1",
-			"3 mod 2 == 1",
-			"str(a)",
-			"a = datetime.datetime.now()",
-			"str(a)",
-			"a",
-			"a = datetime.datetime.now()",
-			"import datetime",
-			"datetime",
-			"a[-1]",
-			"a = [(1,2,3,4), (2)]",
-			"a[-1]",
-			"a[:-1]",
-			"a[::-1]"
+			"a = 0"
 		]
 	},
 	"distraction_free":
@@ -789,151 +826,188 @@
 	},
 	"expanded_folders":
 	[
-		"/E/rocks",
-		"/E/rocks/tests",
-		"/E/test_rocks",
-		"/E/GitGutter"
+		"/E/dev/pma/pma/maps",
+		"/E/dev/saudh",
+		"/E/dev/saudh/saudh/home",
+		"/E/dev/saudh/saudh/login",
+		"/E/dev/saudh/saudh/saudh",
+		"/E/dev/saudh/saudh/templates",
+		"/E/dev/saudh/saudh/templates/adminlte_full",
+		"/E/dev/django-teste-form",
+		"/E/dev/django-teste-form/lib",
+		"/E/dev/django-teste-form/lib/python3.4",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static/AdminLTE",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static/AdminLTE/plugins",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static/AdminLTE/plugins/datepicker",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/breadcrumb",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/inc",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/navbar",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/sidebar",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/user",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templatetags",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templatetags/__pycache__",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templates",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templates/bootstrap3",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templates/bootstrap3/layout",
+		"/E/dev/django-teste-form/teste",
+		"/E/dev/django-teste-form/teste/home/templates",
+		"/E/dev/django-teste-form/teste/static",
+		"/E/dev/django-teste-form/teste/templates",
+		"/E/dev/django-teste-form/teste/templates/adminlte_full",
+		"/E/dev/django-teste-form/teste/teste"
 	],
 	"file_history":
 	[
-		"/E/test_rocks/test_simple.py",
-		"/e/GitGutter/git_gutter_popup.py",
-		"/E/test_rocks/util_class.py",
-		"/E/rocks/rocks_coverage.py",
-		"/E/rocks/rocks_checker.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/base.html",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/plugins/datepicker/bootstrap-datepicker.js",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/assets.py",
+		"/E/dev/django-teste-form/teste/templates/bootstrap3/layout/prepended_appended_text.html",
+		"/E/dev/django-teste-form/teste/teste/settings.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/fields.py",
+		"/E/dev/django-teste-form/teste/templates/adminlte_full/base.html",
+		"/E/dev/django-teste-form/teste/templates/bootstrap3/layout/baseinput.html",
+		"/E/dev/saudh/.gitignore",
+		"/E/dev/django-teste-form/teste/teste/urls.py",
+		"/E/dev/django-teste-form/teste/home/views.py",
+		"/E/dev/django-teste-form/teste/templates/bootstrap3/layout/help_text.html",
+		"/C/Users/jones.ambrosi/AppData/Local/Programs/Python/Python35/lib/site-packages/crispy_forms/helper.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/layout.py",
+		"/E/dev/django-teste-form/teste/templates/bootstrap3/field.html",
+		"/E/dev/django-teste-form/teste/home/templates/home.html",
+		"/E/dev/django-teste-form/.gitignore",
+		"/C/Users/jones.ambrosi/AppData/Local/Programs/Python/Python35/lib/site-packages/crispy_forms/layout.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templatetags/crispy_forms_field.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
 		"/E/rocks/rocks.sublime-project",
-		"/E/rocks/tests/test_coverage.py",
-		"/E/rocks/rocks.py",
-		"/E/rocks/Rocks.sublime-settings",
-		"/E/rocks/setup.py",
-		"/E/rocks/rocks/rocks.py",
-		"/E/rocks/dependencies.json",
-		"/E/dev/pma/pma/maps/admin.py",
-		"/E/rocks/rocks/rocks_coverage.py",
-		"/E/test_rocks/.coveragerc",
-		"/E/rocks/.coveragerc",
-		"/E/rocks/rocks/install_coverage.py",
-		"/E/dev/pma/pma/registration/views.py",
-		"/E/rocks/rocks/rocks_checker.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/pip/_vendor/distlib/_backport/tarfile.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/messages/context_processors.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/messages/constants.py",
-		"/E/rocks/core/rocks_coverage.py",
-		"/E/rocks/core/rocks_checker.py",
-		"/E/dev/pma/nginx.conf",
-		"/C/Users/jones.ambrosi/Documents/Downloads/soundoceanics.com/soundoceanics.com/soundoceanics.key",
-		"/E/dev/pma/DEPLOY.md",
-		"/E/rocks/version.py",
-		"/E/rocks/messages.json",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Preferences.sublime-settings",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/results.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
-		"/E/rocks/tox.ini",
-		"/E/test_rocks/__init__.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/distutils/core.py",
-		"/E/rocks/rocks/coverage_process.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/tox/_pytestplugin.py",
-		"/E/test_rocks/sitecustomize.py",
-		"/E/test_rocks/.pth",
-		"/E/rocks/.coverage",
-		"/E/rocks/tests/simple_test.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/data.py",
-		"/E/test_rocks/.coverage.AUSTRIA.2430.148356",
-		"/E/rocks/.coverage.AUSTRIA.2304.749921",
-		"/E/dev/python-runtime/scripts/install-apt-packages.sh",
-		"/E/dev/pma/pma/reports/pdf.py",
-		"/E/dev/pma/pma/sitepma/templates/map_report.html",
-		"/E/dev/python-runtime/Makefile",
-		"/E/dev/python-runtime/Dockerfile3",
+		"/E/dev/pma/pma/account/models.py",
+		"/C/Users/jones.ambrosi/Downloads/trunk/admin.py",
+		"/C/Users/jones.ambrosi/Downloads/trunk/forms.py",
+		"/E/dev/saudh/saudh/home/views.py",
+		"/E/dev/saudh/saudh/home/templates/atendimentos.html",
 		"/E/dev/pma/pma/maps/models.py",
-		"/E/dev/pma/pma/maps/survey.py",
-		"/E/dev/pma/pma/pma/settings.py",
-		"/E/dev/pma/pma/maps/tests.py",
-		"/E/dev/pma/pma/logging.conf",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/aggregates.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/expressions.py",
-		"/E/dev/pma/pma/maps/search.py",
-		"/E/dev/pma/pma/sitepma/views.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/geopy/point.py",
-		"/E/dev/pma/pma/reports/tests.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/geos/point.py",
-		"/E/dev/pma/pma/maps/views.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/utils/datetime_safe.py",
-		"/E/dev/pma/program-map-application.sublime-project",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/test/testcases.py",
-		"/C/Users/jones.ambrosi/Downloads/pylint-1.6.4.xml",
-		"/E/rocks/DOCS.md",
-		"/E/rocks/DOCS.MD",
-		"/E/test_rocks/test_me.py",
-		"/E/rocks/setup.cfg",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rsub/rsub.sublime-settings",
-		"/E/rocks/requirements.txt",
-		"/E/rocks/tests/test_yaml.py",
-		"/E/rocks/test_a.py",
-		"/E/rocks/test/test_yaml.py",
-		"/E/sphinx/setup.cfg",
-		"/E/testnose/a.py",
-		"/E/testnose/test_me.py",
-		"/E/rocks/tests/test_yaml_test.py",
-		"/E/rocks/a.py",
-		"/E/rocks/tests/__init__.py",
-		"/E/rocks/.noserc",
-		"/E/rocks/__init__.py",
-		"/E/dev/pma/.gitignore",
-		"/E/dev/pma/pma/sitepma/templates/index.html",
-		"/E/dev/pytox/pma/setup.cfg",
-		"/E/rocks/README.md",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/README.md",
-		"/E/rocks_2/teste.py",
-		"/E/rocks/test/__init__.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/rocks.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/tox.ini",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/setup.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/tox.ini",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/test/__init__.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/rocks_checker.py",
-		"/E/dev/t.py",
-		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/LICENSE",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/messages.json",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/rocks/messages/install.txt",
-		"/E/dev/pma/README.md",
-		"/E/dev/pma/pma/maps/static/js/admin_so_utils.js",
-		"/E/dev/pma/pma/templates/gis/openlayers.html",
+		"/E/dev/saudh/saudh/home/admin.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/admin/options.py",
+		"/E/dev/django-teste-form/requirements.txt",
+		"/E/dev/saudh/saudh/requirements.txt",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap3/templates/bootstrap3/form_errors.html",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templates/admin/includes/fieldset.html",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templates/admin/includes/field.html",
 		"/E/dev/pma/pma/account/admin.py",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/admin/openlayers.js",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/static/gis/js/OLMapWidget.js",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/numpy/core/tests/test_multiarray.py",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/openlayers.html",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/forms/widgets.py",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/openlayers-osm.html",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/admin/widgets.py",
-		"/C/Users/jones.ambrosi/Documents/GitHub/django/django/contrib/gis/templates/gis/admin/osm.html",
-		"/C/Users/jones.ambrosi/AppData/Local/Continuum/Anaconda3/lib/smtplib.py",
-		"/E/dev/pma/pma/sitepma/static/js/map_so.js",
-		"/E/dev/t.cover",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/static/gis/js/OLMapWidget.js",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/admin/widgets.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/templates/gis/admin/openlayers.html",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/templates/gis/openlayers.html",
-		"/C/Users/jones.ambrosi/Desktop/GitGutter/README.md",
-		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter_change.py",
-		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter_compare.py",
-		"/C/Users/jones.ambrosi/Desktop/GitGutter/git_gutter_handler.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/GitGutter/GitGutter.sublime-settings",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/User/GitGutter.sublime-settings",
-		"/C/Users/jones.ambrosi/Desktop/GitGutter/view_collection.py",
-		"/E/rocks/teste.py"
+		"/E/dev/pma/pma/maps/admin.py",
+		"/E/dev/saudh/saudh/saudh/settings.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap3/templatetags/bootstrap3.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap3/bootstrap.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/boundfield.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templates/admin/change_form.html",
+		"/E/dev/saudh/saudh/templates/admin/includes/fieldset.html",
+		"/E/dev/saudh/saudh/templates/admin/includes/field.html",
+		"/E/rocks/setup.py",
+		"/E/dev/saudh/saudh/templates/adminlte_full/base.html",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templatetags/bootstrap_admin_template_tags.py",
+		"/E/dev/saudh/saudh/home/templatetags/admin_template_tags.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/widgets.py",
+		"/E/dev/saudh/saudh/templatetags/admin_template_tags.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/admin/templates/admin/includes/fieldset.html",
+		"/E/dev/saudh/saudh/templates/admin/include/fieldset.html",
+		"/E/dev2/web_postgres/Dockerfile",
+		"/E/dev2/web_postgres/docker-compose.yml",
+		"/E/dev/saudh/saudh/home/forms.py",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/plugins/ckeditor/ckeditor.js",
+		"/E/dev2/web_postgres/setup.py",
+		"/E/dev/pma/pma/registration/templates/registration.html",
+		"/E/dev2/web_postgres/setup.cfg",
+		"/E/django-adminlte-full-0.1.0/setup.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/formsets.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/forms.py",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/templatetags/adminlte_full.py",
+		"/E/dev/saudh/saudh/login/views.py",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/menu.py",
+		"/E/dev/saudh/saudh/templates/adminlte_full/inc/avatar.html",
+		"/E/dev/pma/pma/pma/settings.py",
+		"/E/dev/saudh/saudh/templates/adminlte_full/navbar/user.html",
+		"/E/dev/saudh/saudh/templates/adminlte_full/sidebar/user-panel.html",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/utils.py",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/templates/adminlte_full/user/login.html",
+		"/E/dev/saudh/saudh/templates/adminlte_full/user/login.html",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/views.py",
+		"/E/dev/saudh/saudh/login/models.py",
+		"/E/dev/saudh/saudh/login/urls.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/models.py",
+		"/E/dev/saudh/saudh/login/haoc_backend.py",
+		"/E/dev2/web_postgres/entry.sh",
+		"/E/dev2/web_postgres/requirements.txt",
+		"/E/dev/pytox/main.py",
+		"/E/dev2/web_postgres/main.py",
+		"/E/dev/saudh/saudh/home/urls.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/backends.py",
+		"/E/dev/pytox/requirements.txt",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/shortcuts.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/query.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/base.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/options.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/base_user.py",
+		"/E/dev/pma/pma/lib/python2.7/site-packages/pip/_vendor/requests/api.py",
+		"/E/dev/pytox/gunicorn.py",
+		"/E/dev/saudh/saudh/login/__init__.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/__init__.py",
+		"/E/rocks/dependencies.json",
+		"/E/rocks/rocks_coverage.py",
+		"/E/dev/pytox/supervisord.conf",
+		"/E/rocks/rocks_checker.py",
+		"/E/rocks/DOCS.md",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/st2_linux_x64/coverage/__init__.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/pip/_vendor/requests/auth.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Installed Packages/0_package_control_loader.sublime-package-new",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/st3_linux_x64/coverage/__main__.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/readme.md",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/.sublime-dependency",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/LICENSE",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/dependency-metadata.json",
+		"/E/dev/pytox/Dockerfile",
+		"/E/dev/pytox/tox.ini",
+		"/E/dev/pytox/docker-compose.yml",
+		"/E/dev/saudh/saudh/home/templates/lista_contas_parciais.html",
+		"/E/dev/saudh/saudh/login/templates/login_template.html",
+		"/E/dev/saudh/saudh/login/forms.py",
+		"/E/dev/saudh/saudh/home/templates/auditoria.html",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/dist/css/AdminLTE.css",
+		"/E/dev/saudh/saudh/mock_data/csv2json.py",
+		"/E/dev/saudh/saudh/mock_data/lancamentos.json",
+		"/E/dev/saudh/saudh/mock_data/lancamentos.csv",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/pages/tables/data.html",
+		"/C/Users/jones.ambrosi/Downloads/MOCK_DATA.csv",
+		"/C/Users/jones.ambrosi/Downloads/MOCK_DATA (1).csv",
+		"/E/dev/saudh/saudh/home/templates/home_template.html",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/pages/examples/invoice.html",
+		"/E/dev/saudh/saudh/templates/adminlte_full/base-layout.html",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/assets.py",
+		"/E/dev/saudh/saudh/saudh/urls.py",
+		"/E/dev/saudh/saudh/logfile",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js",
+		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/index.html"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
 		"height": 102.0,
 		"where_history":
 		[
+			"E:\\dev\\pma",
+			"E:\\dev\\pma]",
+			"E:\\dev\\pna]",
+			"E:\\dev\\saudh",
+			"E:\\django-adminlte-full-0.1.0",
+			"",
+			"-*/bin/*,-*/lib/*,",
 			"e:\\GitGutter",
 			"e:\\gitgutter\\*.*",
 			"e:\\gitgutter\\*",
@@ -982,6 +1056,94 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"field_class",
+			"label",
+			"bin",
+			"label",
+			"PrependedText",
+			"extra_context",
+			"controls",
+			"2",
+			"''",
+			"bootstrapd",
+			"'\n",
+			"form",
+			"home",
+			"html",
+			"home",
+			"adminform",
+			"admin.py",
+			"adminform",
+			"SubWidget",
+			"form",
+			"trans",
+			"Dockerfile",
+			"myview",
+			"CENTRI",
+			"stat",
+			"Você está autenticado como",
+			"icon",
+			"grav",
+			"gra",
+			".com",
+			"wp",
+			"wp.com",
+			"i2.wp.com",
+			"grava",
+			"image",
+			"auth_login",
+			"AllowAllUsersRemoteUserBackend",
+			"_meta",
+			"UserManager",
+			"BaseUserManager",
+			"get_by_natural_key",
+			"AUTH",
+			"AUTH_USE",
+			"AUTH_USER_MODEL",
+			"AbstractBaseUser",
+			"CallableTrue",
+			"basic_auth",
+			"requests",
+			"backends",
+			"lines_to_regions",
+			"9000",
+			"login",
+			"periodo",
+			"Lançamentos",
+			"        <div class=\"box-header\">\n        </div>\n",
+			"inline",
+			"pull",
+			"              <",
+			"8",
+			"green",
+			"greeb",
+			"incluso",
+			"nu",
+			"content_table",
+			"content_table\ncontent_table",
+			"content_table",
+			"example1",
+			" }}</",
+			"strong",
+			"prontuario",
+			"atendimento",
+			"adminl",
+			"datatables",
+			"example1",
+			"data table",
+			"th>",
+			"path",
+			"get_coverage",
+			"check_code",
+			"logger",
+			"run(",
+			"run_command",
+			"RocksCommand",
+			"sublime_plugin",
+			"diff",
+			"gitgutterdiff",
+			"gitgutterdiffpopup",
+			"args=",
 			"view",
 			"gutter_popup",
 			"_popup",
@@ -1021,95 +1183,7 @@
 			"sitecustomize.py",
 			"No data was collected.",
 			"sessi",
-			"greenlet",
-			"INFO",
-			"simpleFormatter",
-			"\nVessel Data",
-			"search_weather_nearby_point_12_months",
-			"weathers",
-			"weathers\n",
-			"weathers",
-			"self.weathers",
-			"weathers",
-			"weathers\n",
-			"search_weather_nearby_point",
-			"search_weather_nearby_point_12_months",
-			"search_weather_nearby_point",
-			"line",
-			"* 2",
-			"info_lines",
-			"info_l",
-			"lat_min",
-			"self.survey.vessel_path",
-			"get_geom_block(",
-			"get_geom_block",
-			"get_raw_block_coords",
-			"expand_point_polygon",
-			"geopy.",
-			"lng",
-			"expand_point_polygon",
-			"search_weather_nearby_point",
-			"blocks",
-			"block",
-			"formation",
-			"self.point",
-			"expand_point_polygon",
-			"formation",
-			"block_survey",
-			"self.survey.survey_block",
-			"blocks",
-			"Surve",
-			"calculate_survey_block",
-			"self.lat_min",
-			"process_survey_block",
-			"calculate_survey_vessel_path(",
-			"calculate_survey_block(",
-			"calculate_survey_vessel_path",
-			"calculate_survey_vessel_path(",
-			"process_survey_block(",
-			"]",
-			"self.lat_min",
-			"self.block",
-			"search_nearby_block",
-			"self.block",
-			"kms_to_survey",
-			"self.lat_min",
-			"BlockSurvey",
-			"geology",
-			"survey",
-			"right",
-			"json",
-			"urllib",
-			"request",
-			"urllib.request",
-			"datetime",
-			"location",
-			"vessel_path",
-			"survey_block =",
-			"get_block_survey_enc",
-			"survey_block =",
-			"survey_block",
-			"survey_block\n",
-			"get_block_survey_enc",
-			"survey_block",
-			"coords",
-			"survey_block",
-			"get_block_survey_enc",
-			"survey_block",
-			"data_survey",
-			"draw_survey_location",
-			"get_block_survey",
-			"calculate_survey_block",
-			"chegou",
-			"settings",
-			"test_when_have_10_obstrictuns_return_two_qualified",
-			"points",
-			"url =",
-			"draw_info_map",
-			"survey_block",
-			"row\"",
-			"True",
-			" [Tt]est"
+			"greenlet"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1117,6 +1191,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"MyAdminSite",
+			"\n    ",
+			"\n            ",
+			"coverage",
+			"lte",
+			"td>",
+			"',\n",
+			"return",
+			", ",
 			"logging",
 			"\n            ",
 			"\n    ",
@@ -1169,46 +1252,16 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "rocks.py",
+					"file": "/E/dev/django-teste-form/teste/home/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3538,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								789,
-								789
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 493.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/test_rocks/test_simple.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 282,
+						"buffer_size": 2599,
 						"regions":
 						{
 						},
@@ -1221,10 +1274,72 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/dev/django-teste-form/teste/home/templates/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								270,
+								270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4689,
+								4689
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2552.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1235,7 +1350,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -1276,15 +1391,19 @@
 	{
 		"height": 100.0
 	},
+	"output.rope_python_documentation":
+	{
+		"height": 100.0
+	},
 	"output.unsaved_changes":
 	{
-		"height": 124.0
+		"height": 349.0
 	},
 	"pinned_build_system": "Run Tests (Bash Windows)",
 	"project": "rocks.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1294,12 +1413,92 @@
 		"selected_items":
 		[
 			[
-				"contribconstants",
-				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\messages\\constants.py"
+				"base.html",
+				"django-teste-form\\teste\\templates\\bootstrap3\\layout\\baseinput.html"
+			],
+			[
+				"preped",
+				"django-teste-form\\teste\\templates\\bootstrap3\\layout\\prepended_appended_text.html"
+			],
+			[
+				"form_errors.html",
+				"pma\\pma\\lib\\python3.4\\site-packages\\bootstrap3\\templates\\bootstrap3\\form_errors.html"
+			],
+			[
+				"bootstrap3",
+				"pma\\pma\\lib\\python3.4\\site-packages\\bootstrap3\\templatetags\\bootstrap3.py"
+			],
+			[
+				"field",
+				"pma\\pma\\lib\\python3.4\\site-packages\\bootstrap_admin\\templates\\admin\\includes\\field.html"
+			],
+			[
+				"fieldset",
+				"pma\\pma\\lib\\python3.4\\site-packages\\bootstrap_admin\\templates\\admin\\includes\\fieldset.html"
+			],
+			[
+				"form.html",
+				"pma\\pma\\lib\\python3.4\\site-packages\\bootstrap_admin\\templates\\admin\\change_form.html"
+			],
+			[
+				"fieldset.html",
+				"saudh\\saudh\\templates\\admin\\includes\\fieldset.html"
+			],
+			[
+				"bootstrap_admin_template_tags",
+				"pma\\pma\\lib\\python3.4\\site-packages\\bootstrap_admin\\templatetags\\bootstrap_admin_template_tags.py"
+			],
+			[
+				"sett",
+				"saudh\\saudh\\saudh\\settings.py"
 			],
 			[
 				"settings",
+				"saudh\\saudh\\saudh\\settings.py"
+			],
+			[
+				"field.p",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\forms\\fields.py"
+			],
+			[
+				"forms",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\forms\\forms.py"
+			],
+			[
+				"settin",
 				"pma\\pma\\pma\\settings.py"
+			],
+			[
+				"sauviews",
+				"saudh\\saudh\\home\\views.py"
+			],
+			[
+				"",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\auth\\backends.py"
+			],
+			[
+				"authpy",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\auth\\backends.py"
+			],
+			[
+				"adminlte",
+				"django-adminlte-full-0.1.0\\adminlte_full\\static\\AdminLTE\\dist\\css\\AdminLTE.css"
+			],
+			[
+				"data.html",
+				"django-adminlte-full-0.1.0\\adminlte_full\\static\\AdminLTE\\pages\\tables\\data.html"
+			],
+			[
+				"invoice",
+				"django-adminlte-full-0.1.0\\adminlte_full\\static\\AdminLTE\\pages\\examples\\invoice.html"
+			],
+			[
+				"base-la",
+				"saudh\\saudh\\templates\\adminlte_full\\base-layout.html"
+			],
+			[
+				"contribconstants",
+				"pma\\pma\\lib\\python3.4\\site-packages\\django\\contrib\\messages\\constants.py"
 			],
 			[
 				"surve",
@@ -1402,10 +1601,6 @@
 				"PMA Django\\pma\\maps\\migrations\\0017_auto_20161111_1448.py"
 			],
 			[
-				"forms",
-				"PMA Django\\pma\\sitepma\\forms.py"
-			],
-			[
 				"default_",
 				"pma\\pma\\pma\\env_settings\\default_settings.py"
 			],
@@ -1502,10 +1697,6 @@
 				"pma\\home\\static\\css\\base.css"
 			],
 			[
-				"base.html",
-				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base.html"
-			],
-			[
 				"base_site.html",
 				"pma\\lib\\python3.4\\site-packages\\django\\contrib\\admin\\templates\\admin\\base_site.html"
 			],
@@ -1554,7 +1745,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 313.0,
+	"side_bar_width": 354.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

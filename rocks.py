@@ -15,9 +15,7 @@ ST3 = int(sublime.version()) >= 3000
 
 LOOP_RUNNING = False
 
-logger = logging.getLogger(__name__)
-logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.DEBUG)
+logger = logging.getLogger()
 
 
 def plugin_loaded() -> None:
@@ -47,7 +45,8 @@ def change_position_view(view) -> None:
 
 class RocksCommand(sublime_plugin.TextCommand):
 
-    def run(self, edit, on_view=None):
+    def run(self, edit):
+        on_view = self.view
         logger.debug('<<< RocksCommand')
         logger.debug(on_view)
         # self.view = self.active_view()
@@ -114,10 +113,48 @@ class BackgroundChecker(sublime_plugin.EventListener):
         if 'source.python' not in view.scope_name(0):
             return
 
-        view.run_command('rocks', args={'view': view})
+        view.run_command('rocks')  # , on_view=view)
 
     def on_modified(self, view: sublime.View) -> None:
         if 'source.python' not in view.scope_name(0):
             return
 
-        view.run_command('rocks', args={'on_view': view})
+        view.run_command('rocks')  # , on_view=view)
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': "[%(asctime)s] %(levelname)s "
+                      "[%(name)s:%(lineno)s] %(message)s",
+            'datefmt': "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+        'logfile': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': "./logfile",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'standard',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    }
+}

@@ -3,5 +3,5 @@ omit =
     # omit anything in a .local directory anywhere
     */.tox/*
     */coverage/*
-parallel=True
+#parallel=True
 
