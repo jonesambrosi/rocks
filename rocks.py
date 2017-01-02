@@ -44,6 +44,7 @@ def change_position_view(view) -> None:
 
 
 class RocksCommand(sublime_plugin.TextCommand):
+    region_names = ['tracked', 'untracked', 'skipped']
 
     def run(self, edit):
         on_view = self.view
@@ -57,11 +58,16 @@ class RocksCommand(sublime_plugin.TextCommand):
 
         self.show_in_minimap = settings.get('show_in_minimap', True)
 
-        modified = RocksChecker.all_lines(on_view)
-        logger.debug("modified %s", modified)
-        self.bind_icons('untracked', modified)
+        tracked, skipped, untracked = RocksChecker.all_lines(on_view)
+        self._clear_all()
+        logger.debug("tracked", tracked)
+        logger.debug("skipped", skipped)
+        logger.debug("untracked", untracked)
+        self.bind_icons('skipped', skipped)
+        self.bind_icons('untracked', untracked)
+        self.bind_icons('tracked', tracked)
 
-    def clear_all(self):
+    def _clear_all(self):
         for region_name in self.region_names:
             self.view.erase_regions('rocks_%s' % region_name)
 
@@ -69,7 +75,7 @@ class RocksCommand(sublime_plugin.TextCommand):
         regions = []
         for line in lines:
             logger.debug("%s %s", line, line.__class__)
-            position = self.view.text_point(line, 0)
+            position = self.view.text_point(line - 1, 0)
             region = sublime.Region(position, position + 1)
             # if not self.is_region_protected(region):
             #     regions.append(region)
@@ -102,6 +108,8 @@ class RocksCommand(sublime_plugin.TextCommand):
             flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
         else:
             flags = sublime.HIDDEN
+        logger.debug(icon)
+        logger.debug(flags)
         self.view.add_regions('rocks_%s' % event, regions, scope, icon, flags)
 
 

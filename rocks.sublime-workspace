@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"w",
+				"widget"
+			],
+			[
+				"FORM",
+				"format\t(function)"
+			],
+			[
+				"pa",
+				"path\t(statement)"
+			],
+			[
+				"sta",
+				"start_date\t(statement)"
+			],
+			[
+				"a",
+				"alta_inicial\t(statement)"
+			],
+			[
+				"pr",
+				"periodo_inicial\t(statement)"
+			],
+			[
+				"deB",
+				"debug\t(function)"
+			],
+			[
+				"get_all_se",
+				"get_all_sectors\t(function)"
+			],
+			[
+				"geta",
+				"get_all_sectors\t(function)"
+			],
+			[
+				"get",
+				"get_all_aggeement\t(function)"
+			],
+			[
+				"bus",
+				"buscar_todos_setores\t(function)"
+			],
+			[
 				"sele",
 				"select2"
 			],
@@ -50,10 +94,6 @@
 			[
 				"Haco",
 				"HaocUserManager\t(class)"
-			],
-			[
-				"get",
-				"get_user_model"
 			],
 			[
 				"cov",
@@ -474,75 +514,45 @@
 			[
 				"angle",
 				"start_angle"
-			],
-			[
-				"lon_m",
-				"lon_min"
-			],
-			[
-				"ch",
-				"CharField"
-			],
-			[
-				"z",
-				"zIndex"
-			],
-			[
-				"Bloc",
-				"BlocksGeo\tclass"
-			],
-			[
-				"nome",
-				"nome_bacia\tstatement"
-			],
-			[
-				"Ge",
-				"GeologicalParameter\tclass"
-			],
-			[
-				"las",
-				"last_login"
-			],
-			[
-				"log",
-				"logger"
-			],
-			[
-				"fo",
-				"font-size"
-			],
-			[
-				"Use",
-				"UserAdmin\tclass"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/E/dev/django-teste-form/teste/home/views.py",
+			"file": "rocks_coverage.py",
 			"settings":
 			{
-				"buffer_size": 2599,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/dev/django-teste-form/teste/home/templates/home.html",
-			"settings":
-			{
-				"buffer_size": 1153,
+				"buffer_size": 1630,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
+			"file": "rocks.py",
 			"settings":
 			{
-				"buffer_size": 13373,
-				"line_ending": "Unix"
+				"buffer_size": 4576,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/test_rocks/test_simple.py",
+			"settings":
+			{
+				"buffer_size": 343,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/test_rocks/util_class.py",
+			"settings":
+			{
+				"buffer_size": 183,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -553,17 +563,141 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 127.0,
-		"last_filter": "format",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"format",
-				"User: Python PEP8 Autoformat"
+				"en pa",
+				"Package Control: Enable Package"
+			],
+			[
+				"di pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"en pa ",
+				"Package Control: Enable Package"
+			],
+			[
+				"di pa ",
+				"Package Control: Disable Package"
+			],
+			[
+				"do pa",
+				"Package Control: Discover Packages"
+			],
+			[
+				"DI PA",
+				"Package Control: Disable Package"
+			],
+			[
+				"ENPA",
+				"Package Control: Enable Package"
+			],
+			[
+				"DIPA",
+				"Package Control: Disable Package"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"en p",
+				"Package Control: Enable Package"
+			],
+			[
+				"enpa",
+				"Package Control: Enable Package"
+			],
+			[
+				"dipa",
+				"Package Control: Disable Package"
+			],
+			[
+				"repa",
+				"Package Control: Remove Package"
+			],
+			[
+				"diPa",
+				"Package Control: Disable Package"
+			],
+			[
+				"epa",
+				"Package Control: Enable Package"
+			],
+			[
+				"dp",
+				"Package Control: Disable Package"
+			],
+			[
+				"ep",
+				"Package Control: Enable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"enal",
+				"Package Control: Enable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
+			[
+				"sublime",
+				"Set Syntax: SublimeGit Blame"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ENA",
+				"Package Control: Enable Package"
+			],
+			[
+				"DIS",
+				"Package Control: Disable Package"
+			],
+			[
+				"DI",
+				"Package Control: Disable Package"
+			],
+			[
+				"packa",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"install",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"di",
+				"Package Control: Disable Package"
+			],
+			[
+				"enabl",
+				"Package Control: Enable Package"
 			],
 			[
 				"package",
-				"Package Control: Satisfy Dependencies"
+				"Package Control: Enable Package"
+			],
+			[
+				"format",
+				"User: Python PEP8 Autoformat"
 			],
 			[
 				"insta",
@@ -586,10 +720,6 @@
 				"Set Syntax: HTML (Django)"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
 				"python",
 				"Python Refactor: Organize Imports"
 			],
@@ -604,10 +734,6 @@
 			[
 				"channel",
 				"Package Control: Add Channel"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"INSTALL",
@@ -682,137 +808,137 @@
 	},
 	"console":
 	{
-		"height": 258.0,
+		"height": 284.0,
 		"history":
 		[
-			"sublime.version()",
-			"version()",
-			"sublime.arch()",
-			"sublime.platform()",
-			"sublime.packages_path()",
-			"sublime.installed_packages_path()",
-			"sublime.os",
-			"sublime.os()",
-			"sublime.plataform()",
-			"sublime.plataform",
-			"sublime.version()",
-			"sublime.version().",
-			"coverage",
-			"os.path.dirname('e:\\\\dev\\\\saudht\\\\teste.csv\\\\s')",
-			"os.path.dirname('e:\\\\dev\\\\saudht\\\\teste.csv')",
-			"os.path.basename('e:\\\\dev\\\\saudht\\\\teste.csv')",
+			"view.add_regions('rocks_%s' % 'skipped', [(0, 16), (17, 17), (18, 41), (42, 75), (76, 76), (77, 103), (104, 123), (124, 124), (125, 154), (155, 182)], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions(view, 'rocks_%s' % 'skipped', [(0, 16), (17, 17), (18, 41), (42, 75), (76, 76), (77, 103), (104, 123), (124, 124), (125, 154), (155, 182)], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions('rocks_%s' % 'skipped', [(0, 16), (17, 17), (18, 41), (42, 75), (76, 76), (77, 103), (104, 123), (124, 124), (125, 154), (155, 182)], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions('rocks_%s' % 'skipped', [(16, 17)], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions('rocks_%s' % 'skipped', [(16,17)], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions('rocks_%s' % 'skipped', [1], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions('rocks_%s' % 'skipped', [], scope, \"Packages/rocks/icons/skipped.png\", 288)",
+			"view.add_regions('rocks_%s' % 'skipped', [], scope, icon, flags)",
+			"scope = 'markup.%s.rocks' % 'skipped'",
+			"scope = 'markup.%s.rocks' % event_scope",
+			"view.add_regions('rocks_%s' % 'skipped', [], scope, icon, flags)",
+			"self.view.add_regions('rocks_%s' % 'skipped', [], scope, icon, flags)",
+			"[1, 2] - [1]",
+			"view.text_point(3, 0)",
+			"view.text_point(2, 0)",
+			"view.text_point(1, 0)",
+			"view.lines",
+			"view.lines(sublime.Region(0, 277))",
+			"sublime.Region(0, 277)",
+			"view.size()",
+			"view",
+			"cov.get_data()",
+			"cov.load()",
+			"cov.get_data()",
+			"cov.save()",
+			"cov.stop()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], env=process_env)",
+			"cov.start()",
+			"cov.get_data()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], env=process_env)",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], startupinfo=si, env=process_env)",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=, startupinfo=si, env=process_env)",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env)",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"si.dwFlags = subprocess.STARTF_USESTDHANDLES | subprocess.STARTF_USESHOWWINDOW ",
+			"si = subprocess.STARTUPINFO()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"cov = coverage.Coverage(data_file=path + '\\\\.rocks', source=path, concurrency=\"multiprocessing\")",
+			"path = 'E:\\\\test_rocks'",
+			"cov = coverage.Coverage(data_file=path + '\\\\.rocks', source=path, concurrency=\"multiprocessing\")",
+			"os.path",
+			"os.pth",
+			"io.path",
+			"ip.path",
+			"process_env[\"COVERAGE_FILE\"] = path + '\\\\.rocks'",
+			"process_env[\"COVERAGE_PROCESS_START\"] = path + '\\\\.coveragerc'",
+			"process_env = os.environ.copy()",
 			"import os ",
-			"self.__file__",
-			"__file__",
-			"sys.version",
-			"import sys",
-			"os.python ",
-			"os.versions",
-			"os.version",
-			"import os ",
-			"version",
-			"sublime.log_commands(False)",
-			"sublime.log_commands(exec)",
-			"sublime.log_commands(True)",
-			"ExecCommand = exec",
-			"ExecCommand = exec.ExecCommand",
-			"ExecCommand = __import__('exec').ExecCommand",
-			"target",
-			"exec",
-			"exec.ExecCommand",
-			"exec",
-			"__import__('exec')",
-			"tracer = trace.Trace(",
-			"import trace",
-			"import sys",
-			"sublime.version()",
-			"os.version",
-			"import os",
-			"ls",
-			"ls ",
-			"ls",
+			"process_env = os.environ.copy()",
+			"import subprocess",
+			"coverage.process_startup()",
+			"import coverage",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"p.wait()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"coverage.process_startup()",
+			"import coverage",
+			"import coveraga",
+			"import coveragae",
+			"p.wait()",
+			"p",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"process_env[\"COVERAGE_FILE\"] = path + '\\\\.rocks'",
+			"process_env[\"COVERAGE_PROCESS_START\"] = path + '\\\\.coveragerc'",
+			"process_env = os.environ.copy()",
+			"out",
+			"out, err = p.communicate()",
+			"p.wait()",
+			"p.pwait()",
+			".pwait()",
+			"p",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"coverage.process_startup()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path + '\\\\', startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, startupinfo=si, env=process_env, stdout=subprocess.PIPE)",
+			"si.dwFlags = subprocess.STARTF_USESTDHANDLES | subprocess.STARTF_USESHOWWINDOW | subprocess.SW_HIDE",
+			"si.dwFlags = subprocess.STARTF_USESTDHANDLES | subprocess.STARTF_USESHOWWINDOW | SW_HIDE",
+			"si = subprocess.STARTUPINFO()",
+			"a = subprocess.call([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, shell=True)",
+			"subprocess.call([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, shell=True)",
+			"subprocess.call(\"exit 1\", shell=True)",
+			"subprocess.call(\"exit 1\", shell=True, check=True)",
+			"subprocess.run(\"exit 1\", shell=True, check=True)",
+			"out",
+			"out, err = p.communicate()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"path",
+			"cov.get_data()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"cov = coverage.Coverage(data_file=path + '\\\\.rocks', source=path, concurrency=\"multiprocessing\")",
+			"process_env[\"COVERAGE_FILE\"] = path + '\\\\.rocks'",
+			"process_env[\"COVERAGE_PROCESS_START\"] = path + '\\\\.coveragerc'",
+			"process_env = os.environ.copy()",
 			"a",
-			"a = 1",
-			"a",
-			"reload",
-			"]",
-			"reload_plugins",
-			"reload",
-			"l ",
-			"l - 1",
-			"l = sublime.Region(0, 8)",
-			"sublime.Region(0, 8)",
-			"sublime.Region(",
-			"[1][:]",
-			"class a(): pass; ",
-			"class a(): pass;",
-			"class a(): ; pass;",
-			"class a()",
-			"class a(): pass",
-			"class a():",
-			"GeologicalParameter() ** 10",
-			"0.793136538142434 * 582",
-			"(582 * 1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6378137 )/ (256 * math.pow(2, 7)) * 600)",
-			"0.396568269071217 * 582",
-			"(582 * 1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6378137 )/ (256 * math.pow(2, 6)) * 600)",
-			"396.90069270847175 * 582",
-			"(582 * 1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6372.795 )/ (256 * math.pow(2, 6)) * 600)",
-			"396.90069270847175 * 50",
-			"(582 *1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * 6372.795 )/ (256 * math.pow(2, 6)) * 600)",
-			"(582 *1000) / ((math.cos(0 * math.pi/180) * 2 * math.pi * R_EARTH )/ (256 * math.pow(2, 6)) * 600)",
-			"(582 *1000) / ((math.cos(0 * math.PI/180) * 2 * math.PI * R_EARTH )/ (256 * math.pow(2, 6)) * 600)",
-			"(582 *1000) / ((math.cos(0 * math.PI/180) * 2 * math.PI * R_EARTH )/ (256 * .ath.pow(2, 6)) * 600)",
-			"import math",
-			"(582 *1000) / ((math.cos(0 * math.PI/180) * 2 * math.PI * R_EARTH )/ (256 * .ath.pow(2, 6)) * 600)",
-			"580*2",
-			"locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')",
-			"locale.currency(value)",
-			"value = 1234567.89",
-			"locale.setlocale(locale.LC_ALL, 'us')",
-			"locale.setlocale(locale.LC_ALL, 'br')",
-			"locale.setlocale(locale.LC_ALL, 'pt')",
-			"locale.setlocale(locale.LC_ALL, 'su')",
-			"locale.setlocale(locale.LC_ALL, 'pt_BR')",
-			"import locale",
-			"datetime.now().timestamp()",
-			"datetime.now().time()",
-			"datetime.now() + timedelta(seconds=0)",
-			"from datetime import timedelta",
-			"from datetime import timedelta]",
-			"datetime.now() + timedelta(seconds=0)",
-			"datetime.now()",
-			"utc.now()",
-			"datetime.now(tz=None)",
-			"from datetime import datetime ",
-			"datetime.now(tz=None)",
-			"a.replace('drf__', '')",
-			"a.replace('drf__', ''')",
-			"a.lstrip('drf_')",
-			"a.lstrip('drf')",
-			"a.lstrip('drf_')",
-			"a.lstrip('drf__')",
-			"a = 'drf__date__lte'",
-			"'{0:,.2f}'.format(12.38472387)",
-			"'{0:,.2}'.format(12.38472387)",
-			"'{0:2}'.format(12.38472387)",
-			"'{0:.2}'.format(12.38472387)",
-			"'{0:f.2}'.format(12.38472387)",
-			"'{0:.2}'.format(12.38472387)",
-			"'{0:2}'.format(12.38472387)",
-			"data[1][1]",
-			"data[1][2]",
-			"data[1][3]",
-			"data[4][1]",
-			"data[1][4]",
-			"data = [['', 'SWH (m)', 'Curr (knots)', 'Wind (knots)'],['Jan', 2.0, 6.0, 0.0],['Feb', 2.0, 8.0, 0.0],['Mar', 3.0, 10.0, 0.0],['Apr', 4.0, 6.0, 0.0],['May', 5.0, 2.0, 0.0],['Jun', 6.0, 2.0, 0.0],['Jul', 6.0, 3.0, 0.0],['Aug', 5.0, 6.0, 0.0],['Sep', 3.0, 7.0, 0.0],['Oct', 2.0, 7.0, 0.0],['Nov', 1.0, 8.0, 0.0],['Dec', 1.0, 9.0, 0.0]]",
-			"data  =",
-			"a[:-2]",
-			"a[:2]",
-			"a[::-1]",
-			"a[-1]",
-			"a = [1,2,3,4]",
-			"0 < a < 10",
-			"a = 0"
+			"a = cov.get_data()",
+			"cov.get_data()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"cov.get_data()",
+			"cov.load()",
+			"p.wait()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"cov.get_data()",
+			"cov.load()",
+			"cov = coverage.Coverage(data_file=path + '\\\\.rocks', source=path, concurrency=\"multiprocessing\")",
+			"out",
+			"err",
+			"ERR",
+			"out, err = p.communicate()",
+			"p.wait()",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"cov = coverage.Coverage(data_file=path + '\\\\.rocks',",
+			"p = subprocess.Popen([\"python\", \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"coverage.__version__",
+			"import coverage",
+			"import coverage.st3_windows_x64.coverage",
+			"process_env",
+			"p = subprocess.Popen([\"coverage.exe\", \"run\", \"--source=%s\" % path, \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"p = subprocess.Popen([\"coverage\", \"run\", \"--source=%s\" % path, \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"p = subprocess.Popen([\"coverage.exe\", \"run\", \"--source=%s\" % path, \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"p = subprocess.Popen([\"coverage\", \"run\", \"--source=%s\" % path, \"-m\", \"unittest\", \"discover\"], cwd=path, env=process_env, stdout=subprocess.PIPE)",
+			"p = subprocess.Popen(",
+			"    p = subprocess.Popen(",
+			"import subprocess",
+			"process_env[\"COVERAGE_FILE\"] = path + '\\\\.rocks'",
+			"process_env[\"COVERAGE_PROCESS_START\"] = path + '\\\\.coveragerc'",
+			"path = 'e:\\\\test_rocks'",
+			"process_env[\"COVERAGE_PROCESS_START\"]",
+			"process_env[\"COVERAGE_PROCESS_START\"] = path + '\\\\.coveragerc'"
 		]
 	},
 	"distraction_free":
@@ -826,88 +952,109 @@
 	},
 	"expanded_folders":
 	[
-		"/E/dev/pma/pma/maps",
-		"/E/dev/saudh",
-		"/E/dev/saudh/saudh/home",
-		"/E/dev/saudh/saudh/login",
-		"/E/dev/saudh/saudh/saudh",
-		"/E/dev/saudh/saudh/templates",
-		"/E/dev/saudh/saudh/templates/adminlte_full",
-		"/E/dev/django-teste-form",
-		"/E/dev/django-teste-form/lib",
-		"/E/dev/django-teste-form/lib/python3.4",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static/AdminLTE",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static/AdminLTE/plugins",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/static/AdminLTE/plugins/datepicker",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/breadcrumb",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/inc",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/navbar",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/sidebar",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/user",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templatetags",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templatetags/__pycache__",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templates",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templates/bootstrap3",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templates/bootstrap3/layout",
-		"/E/dev/django-teste-form/teste",
-		"/E/dev/django-teste-form/teste/home/templates",
-		"/E/dev/django-teste-form/teste/static",
-		"/E/dev/django-teste-form/teste/templates",
-		"/E/dev/django-teste-form/teste/templates/adminlte_full",
-		"/E/dev/django-teste-form/teste/teste"
+		"/E/rocks",
+		"/E/rocks/icons",
+		"/E/test_rocks",
+		"/E/GitGutter",
+		"/E/GitGutter/icons",
+		"/E/GitGutter/tests",
+		"/E/dev/saudh"
 	],
 	"file_history":
 	[
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/base.html",
+		"/E/rocks/rocks.py",
+		"/E/rocks/rocks_checker.py",
+		"/E/GitGutter/git_gutter_show_diff.py",
+		"/E/GitGutter/git_gutter_events.py",
+		"/E/GitGutter/git_gutter_handler.py",
+		"/E/test_rocks/test_simple.py",
+		"/E/GitGutter/git_gutter_popup.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/nose/loader.py",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/st3_windows_x64/coverage/__init__.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
+		"/E/test_rocks/.coveragerc",
+		"/E/dev/pma/pma/pma/settings.py",
+		"/E/test_rocks/.rocks",
+		"/E/rocks/.rocks",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/dependency-metadata.json",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/readme.md",
+		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/.sublime-dependency",
+		"/E/dev/pma/gunicorn.service",
+		"/E/dev/pma/pma/pma/urls.py",
+		"/E/dev/pma/pma/sitepma/views.py",
+		"/E/dev/pma/gunicorn.socket",
+		"/E/dev/pma/pma/maps/models.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/db/models/fields.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/forms/fields.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/fields/__init__.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/admin/options.py",
+		"/E/dev/pma/pma/maps/admin.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/admin/options.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/forms/__init__.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/gis/forms/widgets.py",
+		"/E/rocks/rocks_coverage.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/Django-1.10.1.dist-info/RECORD",
+		"/C/Users/jones.ambrosi/AppData/Local/Programs/Python/Python35/lib/subprocess.py",
+		"/E/dev/pma/nginx.conf",
+		"/E/dev/pma/pma/templates/registration/login.html",
+		"/E/dev/pma/DEPLOY.md",
+		"/E/dev/pma/gunicorn.conf",
+		"/E/rocks/setup.py",
+		"/E/rocks/DOCS.md",
+		"/E/rocks/.coveragerc",
+		"/E/dev/saudh/saudh/saudh/settings.py",
+		"/E/rocks/dependencies.json",
+		"/E/test_rocks/collections.cover",
+		"/E/dev/saudh/saudh/home/views.py",
+		"/E/dev/saudh/saudh/wsclient/services.py",
+		"/E/dev/saudh/saudh/home/forms.py",
+		"/E/dev/django-teste-form/teste/home/views.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/forms.py",
+		"/E/dev/saudh/saudh/home/templates/atendimentos.html",
 		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/plugins/datepicker/bootstrap-datepicker.js",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/assets.py",
+		"/E/dev/pma/pma/lib/python3.4/site-packages/pip/_vendor/requests/models.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/requests/sessions.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/requests/api.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/requests/models.py",
+		"/E/dev/saudh/saudh/wsclient/clients.py",
+		"/E/dev/saudh/saudh/templates/adminlte_full/base.html",
+		"/E/dev/pma/pma/lib/python2.7/site-packages/pip/_vendor/requests/api.py",
+		"/C/Users/jones.ambrosi/AppData/Local/Programs/Python/Python35/lib/operator.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/layout.py",
+		"/E/dev/saudh/saudh/requirements.txt",
 		"/E/dev/django-teste-form/teste/templates/bootstrap3/layout/prepended_appended_text.html",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/templates/adminlte_full/base.html",
+		"/E/dev/django-teste-form/lib/python3.4/site-packages/adminlte_full/assets.py",
 		"/E/dev/django-teste-form/teste/teste/settings.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/fields.py",
 		"/E/dev/django-teste-form/teste/templates/adminlte_full/base.html",
 		"/E/dev/django-teste-form/teste/templates/bootstrap3/layout/baseinput.html",
 		"/E/dev/saudh/.gitignore",
 		"/E/dev/django-teste-form/teste/teste/urls.py",
-		"/E/dev/django-teste-form/teste/home/views.py",
 		"/E/dev/django-teste-form/teste/templates/bootstrap3/layout/help_text.html",
 		"/C/Users/jones.ambrosi/AppData/Local/Programs/Python/Python35/lib/site-packages/crispy_forms/helper.py",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/layout.py",
 		"/E/dev/django-teste-form/teste/templates/bootstrap3/field.html",
 		"/E/dev/django-teste-form/teste/home/templates/home.html",
 		"/E/dev/django-teste-form/.gitignore",
 		"/C/Users/jones.ambrosi/AppData/Local/Programs/Python/Python35/lib/site-packages/crispy_forms/layout.py",
 		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/templatetags/crispy_forms_field.py",
-		"/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
 		"/E/rocks/rocks.sublime-project",
 		"/E/dev/pma/pma/account/models.py",
 		"/C/Users/jones.ambrosi/Downloads/trunk/admin.py",
 		"/C/Users/jones.ambrosi/Downloads/trunk/forms.py",
-		"/E/dev/saudh/saudh/home/views.py",
-		"/E/dev/saudh/saudh/home/templates/atendimentos.html",
-		"/E/dev/pma/pma/maps/models.py",
 		"/E/dev/saudh/saudh/home/admin.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/admin/options.py",
 		"/E/dev/django-teste-form/requirements.txt",
-		"/E/dev/saudh/saudh/requirements.txt",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap3/templates/bootstrap3/form_errors.html",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templates/admin/includes/fieldset.html",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templates/admin/includes/field.html",
 		"/E/dev/pma/pma/account/admin.py",
-		"/E/dev/pma/pma/maps/admin.py",
-		"/E/dev/saudh/saudh/saudh/settings.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap3/templatetags/bootstrap3.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap3/bootstrap.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/boundfield.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templates/admin/change_form.html",
 		"/E/dev/saudh/saudh/templates/admin/includes/fieldset.html",
 		"/E/dev/saudh/saudh/templates/admin/includes/field.html",
-		"/E/rocks/setup.py",
-		"/E/dev/saudh/saudh/templates/adminlte_full/base.html",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/bootstrap_admin/templatetags/bootstrap_admin_template_tags.py",
 		"/E/dev/saudh/saudh/home/templatetags/admin_template_tags.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/widgets.py",
@@ -916,19 +1063,16 @@
 		"/E/dev/saudh/saudh/templates/admin/include/fieldset.html",
 		"/E/dev2/web_postgres/Dockerfile",
 		"/E/dev2/web_postgres/docker-compose.yml",
-		"/E/dev/saudh/saudh/home/forms.py",
 		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/plugins/ckeditor/ckeditor.js",
 		"/E/dev2/web_postgres/setup.py",
 		"/E/dev/pma/pma/registration/templates/registration.html",
 		"/E/dev2/web_postgres/setup.cfg",
 		"/E/django-adminlte-full-0.1.0/setup.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/formsets.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/forms/forms.py",
 		"/E/django-adminlte-full-0.1.0/adminlte_full/templatetags/adminlte_full.py",
 		"/E/dev/saudh/saudh/login/views.py",
 		"/E/django-adminlte-full-0.1.0/adminlte_full/menu.py",
 		"/E/dev/saudh/saudh/templates/adminlte_full/inc/avatar.html",
-		"/E/dev/pma/pma/pma/settings.py",
 		"/E/dev/saudh/saudh/templates/adminlte_full/navbar/user.html",
 		"/E/dev/saudh/saudh/templates/adminlte_full/sidebar/user-panel.html",
 		"/E/django-adminlte-full-0.1.0/adminlte_full/utils.py",
@@ -945,62 +1089,20 @@
 		"/E/dev2/web_postgres/main.py",
 		"/E/dev/saudh/saudh/home/urls.py",
 		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/backends.py",
-		"/E/dev/pytox/requirements.txt",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/shortcuts.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/query.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/base.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/db/models/options.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/base_user.py",
-		"/E/dev/pma/pma/lib/python2.7/site-packages/pip/_vendor/requests/api.py",
-		"/E/dev/pytox/gunicorn.py",
-		"/E/dev/saudh/saudh/login/__init__.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/django/contrib/auth/__init__.py",
-		"/E/rocks/dependencies.json",
-		"/E/rocks/rocks_coverage.py",
-		"/E/dev/pytox/supervisord.conf",
-		"/E/rocks/rocks_checker.py",
-		"/E/rocks/DOCS.md",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/coverage/control.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/st2_linux_x64/coverage/__init__.py",
-		"/E/dev/pma/pma/lib/python3.4/site-packages/pip/_vendor/requests/auth.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Installed Packages/0_package_control_loader.sublime-package-new",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/st3_linux_x64/coverage/__main__.py",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/readme.md",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/.sublime-dependency",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/LICENSE",
-		"/C/Users/jones.ambrosi/AppData/Roaming/Sublime Text 3/Packages/coverage/dependency-metadata.json",
-		"/E/dev/pytox/Dockerfile",
-		"/E/dev/pytox/tox.ini",
-		"/E/dev/pytox/docker-compose.yml",
-		"/E/dev/saudh/saudh/home/templates/lista_contas_parciais.html",
-		"/E/dev/saudh/saudh/login/templates/login_template.html",
-		"/E/dev/saudh/saudh/login/forms.py",
-		"/E/dev/saudh/saudh/home/templates/auditoria.html",
-		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/dist/css/AdminLTE.css",
-		"/E/dev/saudh/saudh/mock_data/csv2json.py",
-		"/E/dev/saudh/saudh/mock_data/lancamentos.json",
-		"/E/dev/saudh/saudh/mock_data/lancamentos.csv",
-		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/pages/tables/data.html",
-		"/C/Users/jones.ambrosi/Downloads/MOCK_DATA.csv",
-		"/C/Users/jones.ambrosi/Downloads/MOCK_DATA (1).csv",
-		"/E/dev/saudh/saudh/home/templates/home_template.html",
-		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/pages/examples/invoice.html",
-		"/E/dev/saudh/saudh/templates/adminlte_full/base-layout.html",
-		"/E/django-adminlte-full-0.1.0/adminlte_full/assets.py",
-		"/E/dev/saudh/saudh/saudh/urls.py",
-		"/E/dev/saudh/saudh/logfile",
-		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js",
-		"/E/django-adminlte-full-0.1.0/adminlte_full/static/AdminLTE/index.html"
+		"/E/dev/pytox/requirements.txt"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 102.0,
 		"where_history":
 		[
+			"E:\\GitGutter",
+			"E:\\dev\\pma",
+			"E:\\dev\\saudh",
 			"E:\\dev\\pma",
 			"E:\\dev\\pma]",
 			"E:\\dev\\pna]",
@@ -1056,6 +1158,76 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bind_icons",
+			"rocks_",
+			"tracked",
+			"lines_to_regions",
+			"untracked",
+			"tracked",
+			"skipped",
+			"c",
+			"git_gu",
+			"git_guyy",
+			"rocks_",
+			"git_g",
+			"region_names",
+			"_clear_all",
+			"rocks_+",
+			"region",
+			"_clear_all",
+			"git_gutter_",
+			"icon",
+			"all_lines",
+			"lines",
+			"region_names",
+			"green",
+			"red",
+			"gitgutter-hi",
+			"color",
+			"all_lines",
+			"run_coverage_subprocess",
+			"check_code",
+			"run_coverage_subprocess",
+			"discover",
+			"                         ",
+			"pol",
+			"GEOSGeometry",
+			"geo",
+			"GeometryField",
+			"widget",
+			"OpenLayersWidget",
+			"OSMWidget",
+			", widget=CustomOpenLayersWidget",
+			"CustomOpenLayersWidget)",
+			"CustomOpenLayersWidget",
+			"CustomOpenLayersWidget[",
+			"CustomOpenLayersWidget",
+			"point",
+			".ModelAdmin",
+			"ModelAdmin",
+			"admin.ModelAdmin",
+			"OpenLayersWidget",
+			"POINT",
+			"block",
+			"OpenLayersWidget",
+			"GeoModelAdmin",
+			"openlayers_url",
+			"OpenLayers.js",
+			"tracer_coverage",
+			"run_coverage_subprocess",
+			"SW_HIDE",
+			"<<<<",
+			"9000",
+			"dirname",
+			"\n            ",
+			"    p = subprocess.Popen(\n        [\"python\", \"-m\", \"unittest\", \"discover\"],\n        cwd=path,\n        stdout=subprocess.PIPE\n    )\n    out, err = p.communicate()\n    # p.communicate()\n    p.wait()\n    logger.debug(\"Subprocess %s %s\", out, err)\n",
+			"LOGGING",
+			"    p = subprocess.Popen(\n        [\"python\", \"-m\", \"unittest\", \"discover\"],\n        cwd=path,\n        stdout=subprocess.PIPE\n    )\n    out, err = p.communicate()\n    # p.communicate()\n    p.wait()\n    logger.debug(\"Subprocess %s %s\", out, err)\n",
+			"            '",
+			",\n",
+			"self.json",
+			"form.",
+			"control-group",
 			"field_class",
 			"label",
 			"bin",
@@ -1113,77 +1285,7 @@
 			"        <div class=\"box-header\">\n        </div>\n",
 			"inline",
 			"pull",
-			"              <",
-			"8",
-			"green",
-			"greeb",
-			"incluso",
-			"nu",
-			"content_table",
-			"content_table\ncontent_table",
-			"content_table",
-			"example1",
-			" }}</",
-			"strong",
-			"prontuario",
-			"atendimento",
-			"adminl",
-			"datatables",
-			"example1",
-			"data table",
-			"th>",
-			"path",
-			"get_coverage",
-			"check_code",
-			"logger",
-			"run(",
-			"run_command",
-			"RocksCommand",
-			"sublime_plugin",
-			"diff",
-			"gitgutterdiff",
-			"gitgutterdiffpopup",
-			"args=",
-			"view",
-			"gutter_popup",
-			"_popup",
-			"popup",
-			"coverage",
-			"all_lines",
-			"path",
-			"StringIO",
-			"sublime",
-			"staticmethod",
-			"coverage",
-			"Rocks",
-			"all_lines",
-			"rocks_tracker",
-			"python",
-			"´python",
-			"proc",
-			"finish",
-			"ExecCommand",
-			"dependencies",
-			".js",
-			"runner",
-			"print",
-			".')\n",
-			"initial_value",
-			"add_mes",
-			"messages",
-			"error",
-			":\n",
-			"coverage",
-			"RocksCommand",
-			"views",
-			"views]",
-			"views",
-			"except",
-			"}\n",
-			"sitecustomize.py",
-			"No data was collected.",
-			"sessi",
-			"greenlet"
+			"              <"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1191,6 +1293,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"c",
+			"stdout",
+			"CustomOpenLayersWidget())",
+			"class",
+			"CustomModelAdmin",
+			",\n",
 			"MyAdminSite",
 			"\n    ",
 			"\n            ",
@@ -1252,24 +1360,54 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/dev/django-teste-form/teste/home/views.py",
+					"file": "rocks_coverage.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2599,
+						"buffer_size": 1630,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								557,
+								557
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "rocks.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3031,
+								3031
 							]
 						],
 						"settings":
@@ -1279,34 +1417,32 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1440.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/E/dev/django-teste-form/teste/home/templates/home.html",
+					"buffer": 2,
+					"file": "/E/test_rocks/test_simple.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1153,
+						"buffer_size": 343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								270,
-								270
+								203,
+								203
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1316,33 +1452,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/E/dev/django-teste-form/lib/python3.4/site-packages/crispy_forms/bootstrap.py",
+					"buffer": 3,
+					"file": "/E/test_rocks/util_class.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13373,
+						"buffer_size": 183,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4689,
-								4689
+								124,
+								124
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2552.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1350,7 +1484,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1403,7 +1537,7 @@
 	"project": "rocks.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1412,6 +1546,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"settings",
+				"pma\\pma\\pma\\settings.py"
+			],
+			[
+				"prepende",
+				"django-teste-form\\teste\\templates\\bootstrap3\\layout\\prepended_appended_text.html"
+			],
+			[
+				"prepen",
+				"django-teste-form\\teste\\templates\\bootstrap3\\layout\\prepended_appended_text.html"
+			],
+			[
+				"requi",
+				"saudh\\saudh\\requirements.txt"
+			],
 			[
 				"base.html",
 				"django-teste-form\\teste\\templates\\bootstrap3\\layout\\baseinput.html"
@@ -1450,10 +1600,6 @@
 			],
 			[
 				"sett",
-				"saudh\\saudh\\saudh\\settings.py"
-			],
-			[
-				"settings",
 				"saudh\\saudh\\saudh\\settings.py"
 			],
 			[
@@ -1745,7 +1891,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 354.0,
+	"side_bar_width": 305.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

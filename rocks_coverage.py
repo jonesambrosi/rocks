@@ -1,89 +1,57 @@
 import logging
 import subprocess
 import os
+import unittest
 
 logger = logging.getLogger()
 
 try:
-    import coverage.st3_windows_x64.coverage
-    logger.debug("************* ACHOU ****************")
-    print("************* ACHOU ****************")
-except:
+    logger.debug("Import coverage")
     import coverage
-    logger.debug("************* NAO ****************")
-    print("************* NAO ****************")
+except:
+    logger.error("Import coverage error")
 
 
 def check_code(path):
-    logger.debug("************* START COVERAGE %s ****************", path)
-    print("************* START COVERAGE ****************", path)
+    logger.debug("START COVERAGE %s", path)
     ret = run_coverage_subprocess(path)
-    logger.debug("************* STOP COVERAGE %s ****************", path)
-    print("************* STOP COVERAGE ****************", path)
+    logger.debug("START COVERAGE %s", path)
 
     return ret
-
-
-def run_coverage(path):
-
-    logger.debug("Pass %s", path)
-    process_env = os.environ.copy()
-    process_env["COVERAGE_PROCESS_START"] = path + '\\.coveragerc'
-
-    p = subprocess.Popen(
-        # coverage run --source=/mnt/e/test_rocks/ -m unittest discover
-        ["python", "-m", "unittest", "discover"],
-        cwd=path,
-        env=process_env,
-        stdout=subprocess.PIPE
-    )
-    # out, err = p.communicate()
-    # logger.debug("Subprocess %s %s", out, err)
-    p.wait()
-    cov = coverage.Coverage(data_file=path + '\\.coverage',
-                            source=path + '\\',
-                            concurrency="multiprocessing")
-    cov.load()
-    cov.combine()
-
-    logger.debug("Get data %s", path)
-    print("Get data", path)
-    return cov.get_data()
 
 
 def run_coverage_subprocess(path):
 
     logger.debug("Pass %s", path)
-    process_env = os.environ.copy()
-    # process_env["COVERAGE_PROCESS_START"] = path + '\\.coveragerc'
-    process_env["COVERAGE_FILE"] = path + '\\.rocks'
 
-    # ["python", "-m", "unittest", "discover"],
-    p = subprocess.Popen(
-        ["coverage", "run", "--source=%s" %
-            path, "-m", "unittest", "discover"],
-        cwd=path,
-        env=process_env,
-        stdout=subprocess.PIPE
-    )
-    p.wait()
-    out, err = p.communicate()
-    logger.debug("Subprocess %s %s", out, err)
-    print("Subprocess %s %s", out, err)
-    cov = coverage.Coverage(data_file=path + '\\.rocks',
-                            source=path,
-                            concurrency="multiprocessing")
-    cov.load()
-    cov.combine()
+    cov = coverage.Coverage(data_file=path + '/.rocks',
+                            auto_data=True, source=[path],
+                            concurrency='multiprocessing')
+    cov.start()
+
+    list_tests = unittest.TestLoader().discover(start_dir=path)
+    suite = unittest.TestSuite(tests=list_tests)
+
+    result = unittest.TestResult()
+    logger.debug("Count tests: %s", suite.countTestCases())
+    suite.run(result)
+
+    logger.debug('Result: %s', result)
+
+    cov.stop()
+    cov.save()
+
+    # cov = coverage.Coverage(data_file=path + '\\.rocks', concurrency='multiprocessing')
+    # cov.load()
 
     logger.debug("Get data %s", path)
-    print("Get data", path)
-    return cov.get_data()
+
+    return cov
 
 
 # def tracer_coverage(path):
 #     import unittest
-#     import trace
+#     import trace'
 #     # from os.path import dirname, abspath
 #     from collections import defaultdict
 #     # from re import compile, match

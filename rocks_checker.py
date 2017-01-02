@@ -12,17 +12,9 @@ try:
 except (ImportError, ValueError):
     from rocks.rocks.rocks_coverage import check_code
 
-print("check_code", check_code)
 logger = logging.getLogger(__name__)
 # logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.DEBUG)
-
-# tracker_out_last = StringIO()
-# tracker_out = StringIO()
-# rocks_tracker = trace.Trace(count=1, trace=1, countfuncs=0,
-#                             countcallers=0, ignoremods=(), ignoredirs=(),
-#                             infile=None, outfile=tracker_out, timing=True)
-
 
 class RocksChecker:
     # Todo: these aren't really views but handlers. Refactor/Rename.
@@ -82,12 +74,13 @@ class RocksChecker:
         region = sublime.Region(0, chars)
         lines = view.lines(region)
 
-        # logger.debug("%s", view.substr(region))
-        # rocks_tracker.run(view.substr(region))
-
         logger.debug("file_name analysis2: %s", view.file_name())
         r = RocksChecker.coverage.analysis2(view.file_name())
 
         logger.debug(r)
+        logger.debug("Saida: %s", lines)
 
-        return range(0, len(lines))
+        # Tracked, Untracked
+        tracked = set(r[1]) - set(r[3])
+        logger.debug("listas: %s %s %s", list(tracked), r[2], r[3])
+        return list(tracked), r[2], r[3]
