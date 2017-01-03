@@ -9,7 +9,7 @@
             "readme": "https://raw.githubusercontent.com/jonesambrosi/rocks/master/readme.md",
             "issues": "https://github.com/jonesambrosi/rocks/issues",
             "donate": "https://gratipay.com/rocks/",
-            "labels": ["testing", "continuous integration"],
+            "labels": ["testing", "continuous integration", "python", "auto-testing", "coverage"],
             "releases": [
                 {
                     "sublime_text": "<3000",
