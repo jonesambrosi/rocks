@@ -1,20 +1,13 @@
 import sublime
-# import trace
 import logging
-# import sys
 import os
-# try:
-#     from StringIO import StringIO as StringIO
-# except (ImportError, ValueError):
-#     from io import StringIO as StringIO
 try:
     from .rocks_coverage import check_code
 except (ImportError, ValueError):
     from rocks.rocks.rocks_coverage import check_code
 
 logger = logging.getLogger(__name__)
-# logger.addHandler(logging.StreamHandler(sys.stdout))
-logger.setLevel(logging.DEBUG)
+
 
 class RocksChecker:
     # Todo: these aren't really views but handlers. Refactor/Rename.
@@ -77,8 +70,7 @@ class RocksChecker:
         logger.debug("file_name analysis2: %s", view.file_name())
         r = RocksChecker.coverage.analysis2(view.file_name())
 
-        logger.debug(r)
-        logger.debug("Saida: %s", lines)
+        logger.debug("Out: %s", lines)
 
         # Tracked, Untracked
         tracked = set(r[1]) - set(r[3])

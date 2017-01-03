@@ -1,0 +1,27 @@
+{
+    "schema_version": "3.0.0",
+    "packages": [
+        {
+            "name": "Rocks",
+            "details": "https://github.com/jonesambrosi/rocks",
+            "homepage": "https://rocks.io/",
+            "author": "Jones",
+            "readme": "https://raw.githubusercontent.com/jonesambrosi/rocks/master/readme.md",
+            "issues": "https://github.com/jonesambrosi/rocks/issues",
+            "donate": "https://gratipay.com/rocks/",
+            "labels": ["testing", "continuous integration"],
+            "releases": [
+                {
+                    "sublime_text": "<3000",
+                    "tags": "st2-",
+                    "dependencies": ["coverage"]
+                },
+                {
+                    "sublime_text": ">=3000",
+                    "tags": "st3-",
+                    "dependencies": ["coverage"]
+                }
+            ]
+        },
+    ],
+}
