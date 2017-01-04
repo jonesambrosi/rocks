@@ -8,9 +8,9 @@ class TestReadingStructures(unittest.TestCase):
 
     def test_when_compile_code_return_lines_pass(self):
 
-        data = rocks_coverage.check_code('/mnt/e/test_rocks')
+        cov = rocks_coverage.check_code('/mnt/e/some_code')
 
-        print(data, data.line_counts())
+        data = cov.get_data()
 
         assert data is not None
         assert data.line_counts() != {}
