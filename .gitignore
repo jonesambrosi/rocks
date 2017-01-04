@@ -87,4 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Rocks coverage project
+.rocks
+.rocks.*
+tracer
+
 rocks.sublime-workspace

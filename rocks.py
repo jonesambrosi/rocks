@@ -1,24 +1,27 @@
-import sublime
-import sublime_plugin
+try:
+    import sublime
+    import sublime_plugin
+
+    ST3 = int(sublime.version()) >= 3000
+except:
+    pass
 
 import os
-import sys
 import logging
 
 
 try:
-    from .rocks_checker import RocksChecker
+    from rocks.process.checker import RocksChecker
 except (ImportError, ValueError):
-    from rocks.rocks_checker import RocksChecker
+    pass
 
-ST3 = int(sublime.version()) >= 3000
 
 LOOP_RUNNING = False
 
 logger = logging.getLogger()
 
 
-def plugin_loaded() -> None:
+def plugin_loaded():
     """Called directly from sublime on plugin load
     """
     global settings
@@ -28,14 +31,14 @@ def plugin_loaded() -> None:
         print("unloop")
 
 
-def plugin_unloaded() -> None:
+def plugin_unloaded():
     """Called directly from sublime on plugin unload
     """
     if LOOP_RUNNING:
         print("Loop")
 
 
-def change_position_view(view) -> None:
+def change_position_view(view):
     pt = view.text_point(0, 3)
     view.sel().clear()
     view.sel().add(sublime.Region(pt))
@@ -124,6 +127,15 @@ class BackgroundChecker(sublime_plugin.EventListener):
         view.run_command('rocks')  # , on_view=view)
 
     def on_modified(self, view: sublime.View) -> None:
+        pass 
+
+        # Revalidate all impacted points
+    #     if 'source.python' not in view.scope_name(0):
+    #         return
+
+    #     view.run_command('rocks')  # , on_view=view)
+
+    def on_post_save(self, view: sublime.View) -> None:
         if 'source.python' not in view.scope_name(0):
             return
 
