@@ -2,9 +2,8 @@
 omit =
     # omit anything in a .local directory anywhere
     */.tox/*
-    */coverage/*
-    */some_code/*
-# parallel = True
+
+parallel = False
 
 [report]
 show_missing = False

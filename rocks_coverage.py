@@ -3,26 +3,26 @@ import subprocess
 import os
 import unittest
 
-logger = logging.getLogger()
+log = logging.getlog()
 
 try:
-    logger.debug("Import coverage")
+    log.debug("Import coverage")
     import coverage
 except:
-    logger.error("Import coverage error")
+    log.error("Import coverage error")
 
 
 def check_code(path):
-    logger.debug("START COVERAGE %s", path)
+    log.debug("START COVERAGE %s", path)
     ret = run_coverage_subprocess(path)
-    logger.debug("START COVERAGE %s", path)
+    log.debug("START COVERAGE %s", path)
 
     return ret
 
 
 def run_coverage_subprocess(path):
 
-    logger.debug("Pass %s", path)
+    log.debug("Pass %s", path)
 
     cov = coverage.Coverage(data_file=path + '/.rocks',
                             auto_data=True, source=[path],
@@ -33,10 +33,10 @@ def run_coverage_subprocess(path):
     suite = unittest.TestSuite(tests=list_tests)
 
     result = unittest.TestResult()
-    logger.debug("Count tests: %s", suite.countTestCases())
+    log.debug("Count tests: %s", suite.countTestCases())
     suite.run(result)
 
-    logger.debug('Result: %s', result)
+    log.debug('Result: %s', result)
 
     cov.stop()
     cov.save()
@@ -44,7 +44,7 @@ def run_coverage_subprocess(path):
     # cov = coverage.Coverage(data_file=path + '\\.rocks', concurrency='multiprocessing')
     # cov.load()
 
-    logger.debug("Get data %s", path)
+    log.debug("Get data %s", path)
 
     return cov
 

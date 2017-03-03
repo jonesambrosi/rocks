@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Rocks</string>
+    <key>settings</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>markup.tracked.rocks</string>
+            <key>scope</key>
+            <string>markup.tracked.rocks</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#00FF00</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>markup.untracked.rocks</string>
+            <key>scope</key>
+            <string>markup.untracked.rocks</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#AAAAAA</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>markup.skipped.rocks</string>
+            <key>scope</key>
+            <string>markup.skipped.rocks</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#85217A</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>markup.error.rocks</string>
+            <key>scope</key>
+            <string>markup.error.rocks</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FF0000</string>
+            </dict>
+        </dict>
+    </array>
+    
+
+    <key>uuid</key>
+    <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
+</dict>
+</plist>

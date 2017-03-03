@@ -1,7 +1,8 @@
 {
     "*": {
         ">=3080": [
-            "coverage"
+            "cove-core",
+            "nose2"
         ]
     }
 }

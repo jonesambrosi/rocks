@@ -127,7 +127,7 @@ class BackgroundChecker(sublime_plugin.EventListener):
         view.run_command('rocks')  # , on_view=view)
 
     def on_modified(self, view: sublime.View) -> None:
-        pass 
+        pass
 
         # Revalidate all impacted points
     #     if 'source.python' not in view.scope_name(0):
@@ -136,6 +136,7 @@ class BackgroundChecker(sublime_plugin.EventListener):
     #     view.run_command('rocks')  # , on_view=view)
 
     def on_post_save(self, view: sublime.View) -> None:
+        logger.debug(sublime.View)
         if 'source.python' not in view.scope_name(0):
             return
 
