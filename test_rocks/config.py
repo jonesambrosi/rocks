@@ -41,12 +41,13 @@ d = {
     },
     'loggers': {
         'foo': {
+            'level': 'ERROR',
             # 'handlers': ['foofile']
             'handlers': ['console']
         }
     },
     'root': {
-        'level': 'DEBUG',
+        'level': 'ERROR',
         # 'handlers': ['console', 'file', 'errors']
         'handlers': ['console']
     },

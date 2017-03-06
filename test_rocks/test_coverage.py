@@ -37,12 +37,12 @@ class TestSimple(unittest.TestCase):
 
         assert True
 
-    # def test_exception(self):
-    #     a = A()
+    def test_exception(self):
+        a = A()
 
-    #     assert a.raise_exc("DDD")
+        assert a.raise_exc("DDD")
 
-    #     return
+        return
 
-    #     # Check code not reached in coverage
-    #     d = 1 + 2 + 3
+        # Check code not reached in coverage
+        d = 1 + 2 + 3

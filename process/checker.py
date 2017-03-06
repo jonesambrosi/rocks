@@ -2,9 +2,9 @@ import sublime
 import logging
 import os
 try:
-    from rocks.process.cover import check_code
+    from .cover import check_code
 except (ImportError, ValueError):
-    from rocks.rocks.process.cover import check_code
+    from rocks.process.cover import check_code
 
 logger = logging.getLogger(__name__)
 

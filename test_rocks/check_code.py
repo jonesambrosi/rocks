@@ -14,16 +14,16 @@ class CheckCode(Plugin):
     commandLineSwitch = (None, 'check-code', 'Say hello!')
 
     def startTestRun(self, event):
-        log.info('Start Test run %s', event)
+        log.debug('Start Test run %s', event)
 
     def startTest(self, event):
-        log.info('Start')
+        log.debug('Start')
 
     def afterSummaryReport(self, event):
-        log.info('[Coverage] %s', event)
-        log.info('[Output] %s', stream.getvalue().decode('UTF-8'))
+        log.debug('[Coverage] %s', event)
+        log.debug('[Output] %s', stream.getvalue().decode('UTF-8'))
 
     def beforeSummaryReport(self, event):
-        log.info('[Coverage] 1 %s', event)
-        log.info('[Coverage] 2 %s', event.stopTestEvent)
-        log.info('[Coverage] 3 %s', event.stopTestEvent.result)
+        log.debug('[Coverage] 1 %s', event)
+        log.debug('[Coverage] 2 %s', event.stopTestEvent)
+        log.debug('[Coverage] 3 %s', event.stopTestEvent.result)

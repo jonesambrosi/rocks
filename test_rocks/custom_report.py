@@ -8,14 +8,14 @@ class CustomTestReport(TestResult):
 
     def __init__(self, change_callback=None):
         super(CustomTestReport, self).__init__()
-        logger.warning('__init__')
+        logger.debug('__init__')
         self.running = False
         self.change_callback = change_callback
         self.success = 0
 
     def startTest(self, test):
         super(CustomTestReport, self).startTest(test)
-        logger.warning('startTest')
+        logger.debug('startTest')
         self.running = True
         if self.change_callback:
             self.change_callback({
@@ -30,44 +30,44 @@ class CustomTestReport(TestResult):
 
     def stopTest(self, test):
         super(CustomTestReport, self).stopTest(test)
-        logger.warning("stopTest %s", test)
+        logger.debug("stopTest %s", test)
         self.running = False
 
     def startTestRun(self):
         super(CustomTestReport, self).startTestRun()
-        logger.warning("startTestRun")
+        logger.debug("startTestRun")
         self.running = True
 
     def stopTestRun(self):
         super(CustomTestReport, self).stopTestRun()
-        logger.warning("stopTestRun")
+        logger.debug("stopTestRun")
         self.running = False
 
     def addError(self, test, err):
         super(CustomTestReport, self).addError(test, err)
-        logger.warning("[E] %s %s", test, err)
+        logger.debug("[E] %s %s", test, err)
 
     def addFailure(self, test, err):
         super(CustomTestReport, self).addFailure(test, err)
-        logger.warning("[F] %s %s", test, err)
+        logger.debug("[F] %s %s", test, err)
 
     def addSuccess(self, test):
         super(CustomTestReport, self).addSuccess(test)
-        logger.warning("[S] %s", test)
+        logger.debug("[S] %s", test)
         self.success += 1
 
     def addSkip(self, test, reason):
         super(CustomTestReport, self).addSkip(test, reason)
-        logger.warning("[s] %s %s", test, reason)
+        logger.debug("[s] %s %s", test, reason)
 
     def addExpectedFailure(self, test, err):
         super(CustomTestReport, self).addExpectedFailure(test, err)
-        logger.warning("[EF] %s %s", test, err)
+        logger.debug("[EF] %s %s", test, err)
 
     def addUnexpectedSuccess(self, test):
         super(CustomTestReport, self).addUnexpectedSuccess(test)
-        logger.warning("[US] %s", test)
+        logger.debug("[US] %s", test)
 
     def addSubTest(self, test, subtest, outcome):
         super(CustomTestReport, self).addSubTest(test, subtest, outcome)
-        logger.warning("[ST] %s %s %s", test, subtest, outcome)
+        logger.debug("[ST] %s %s %s", test, subtest, outcome)
