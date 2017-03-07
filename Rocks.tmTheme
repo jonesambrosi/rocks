@@ -696,7 +696,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#00FF00</string>
+                <string>#41a017</string>
             </dict>
         </dict><dict>
             <key>name</key>
@@ -716,7 +716,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#85217A</string>
+                <string>#FFF380</string>
             </dict>
         </dict><dict>
             <key>name</key>
