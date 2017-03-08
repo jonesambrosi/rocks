@@ -1,4 +1,5 @@
 import logging
+import subprocess
 import unittest
 
 logger = logging.getLogger()
@@ -25,7 +26,7 @@ def run_coverage_subprocess(path):
     cov = coverage.Coverage(data_file=path + '/.rocks',
                             auto_data=True, source=[path],
                             concurrency='multiprocessing')
-    cov.load()
+    # cov.load()
     cov.start()
 
     list_tests = unittest.TestLoader().discover(start_dir=path)
@@ -38,9 +39,7 @@ def run_coverage_subprocess(path):
     logger.debug('Result: %s', result)
 
     cov.stop()
-    cov.save()
 
     logger.debug("Get data %s", path)
 
     return cov
-

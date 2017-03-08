@@ -1,0 +1,12 @@
+[run]
+omit =
+    # omit anything in a .local directory anywhere
+    */.tox/*
+
+parallel = False
+
+[report]
+show_missing = False
+precision = 2
+skip_covered = False
+sort = Cover

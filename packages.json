@@ -14,12 +14,12 @@
                 {
                     "sublime_text": "<3000",
                     "tags": "st2-",
-                    "dependencies": ["coverage"]
+                    "dependencies": ["coverage", "nose2", "colorterm"]
                 },
                 {
                     "sublime_text": ">=3000",
                     "tags": "st3-",
-                    "dependencies": ["coverage"]
+                    "dependencies": ["coverage", "nose2", "colorterm"]
                 }
             ]
         },

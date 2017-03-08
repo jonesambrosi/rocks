@@ -1,5 +1,5 @@
 import unittest
-import rocks_coverage
+from rocks.process import cover
 
 
 class TestReadingStructures(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestReadingStructures(unittest.TestCase):
 
     def test_when_compile_code_return_lines_pass(self):
 
-        cov = rocks_coverage.check_code('/mnt/e/some_code')
+        cov = cover.check_code('/mnt/e/some_code')
 
         data = cov.get_data()
 
