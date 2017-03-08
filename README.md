@@ -14,7 +14,6 @@ Use Rocks.tmTheme to view color in icons. If you use a another theme, please add
 
 ```
 ... 
-....
     <string>Sunburst</string>
     <key>settings</key>
     <array>
