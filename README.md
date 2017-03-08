@@ -1,6 +1,6 @@
 # Rocks
 
-This project have continuous integration testing for automating code coverage in realtime for Python on SublimeText. This plugin simplify development process and check more quickly the problems encontrados. 
+This project have continuous integration testing for automating code coverage in realtime for Python on SublimeText. This plugin simplify development process and check more quickly the problems. 
 
 This project is inspired in [NCrunch](http://www.ncrunch.net) plugin for VS Studio. Not finded similar projects for python.
 
