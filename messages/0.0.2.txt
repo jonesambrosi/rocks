@@ -1,1 +1,2 @@
 * Correct UI marker for testing 
+* Better UI to detect coverage inconsistences 
