@@ -728,7 +728,8 @@
                 <key>foreground</key>
                 <string>#FF0000</string>
             </dict>
-        </dict></array>
+        </dict>
+    </array>
     <key>uuid</key>
     <string>C8C58F9A-35FE-44A4-9BC2-2F3C343DC81D</string>
 </dict>
