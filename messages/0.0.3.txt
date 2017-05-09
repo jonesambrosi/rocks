@@ -1,0 +1,1 @@
+* Correct coverage file error
