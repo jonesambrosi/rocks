@@ -10,8 +10,5 @@ except:
         author='Jones Ambrosi',
         author_email='jones@centrimobi.com.br',
         url='http://rocks.io/',
-        # test_suite='nose2.collector.collector',
-        packages=['rocks.rocks'],
-        # namespace_packages=['tests'],
-        # packages=find_packages()
+        namespace_packages=['tests'],
     )

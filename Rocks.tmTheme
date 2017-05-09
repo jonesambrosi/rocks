@@ -688,7 +688,8 @@
                 <key>foreground</key>
                 <string>#FFFFFF</string>
             </dict>
-        </dict><dict>
+        </dict>
+        <dict>
             <key>name</key>
             <string>markup.tracked.rocks</string>
             <key>scope</key>

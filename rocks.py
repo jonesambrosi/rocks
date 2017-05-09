@@ -1,14 +1,6 @@
 
 import sublime
 import sublime_plugin
-# import functools
-
-# print("pass")
-
-# class RocksCommand(sublime_plugin.TextCommand):
-#     def run(self, edit):
-#         print("foi")
-#         self.view.insert(edit, 0, "Hello, World!")
 
 try:
     import sublime
@@ -20,7 +12,7 @@ except:
     import sublime_plugin
 
 import os
-# import logging
+import logging
 
 
 try:
@@ -29,7 +21,7 @@ except (ImportError, ValueError):
     from rocks.process.checker import RocksChecker
 
 
-# logger = logging.getLogger()
+log = logging.getLogger()
 
 
 def plugin_loaded():
@@ -76,7 +68,7 @@ class RocksCommand(sublime_plugin.TextCommand):
             # if not self.is_region_protected(region):
             #     regions.append(region)
             regions.append(region)
-        # logger.debug("regions %s", regions)
+        log.debug("regions %s", regions)
         return regions
 
     def plugin_dir(self):
@@ -117,7 +109,7 @@ class BackgroundChecker(sublime_plugin.EventListener):
 
         view.run_command('rocks')  # , on_view=view)
 
-    def on_modified(self, view: sublime.View) -> None:
+    def on_modified(self, view):
         pass
 
         # Revalidate all impacted points
@@ -126,8 +118,8 @@ class BackgroundChecker(sublime_plugin.EventListener):
 
     #     view.run_command('rocks')  # , on_view=view)
 
-    def on_post_save(self, view: sublime.View) -> None:
-        # logger.debug(sublime.View)
+    def on_post_save(self, view):
+        log.debug(sublime.View)
         if 'source.python' not in view.scope_name(0):
             return
 

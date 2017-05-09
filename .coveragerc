@@ -4,10 +4,9 @@ omit =
     */.tox/*
     */coverage/*
     */some_code/*
-# parallel = True
+parallel = True
 
 [report]
 show_missing = False
 precision = 2
 skip_covered = False
-sort = Cover

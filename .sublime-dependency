@@ -1,10 +1,7 @@
 {
     "*": {  
-        ">=3080": [
-            // "cov-core",
+        "*": [
             "coverage"
-            // "nose2"
-            // "colorterm"
         ]
     }
 }       
